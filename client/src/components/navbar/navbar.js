@@ -14,6 +14,12 @@ export default class Nav extends Component {
     return (
       <Menu size='tiny'>
         <Menu.Item
+            name='logo'
+            active={activeItem === 'logo'}
+        >
+            <Image src={Logo} alt ="logo" size='tiny'/>
+        </Menu.Item>
+        <Menu.Item
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
@@ -75,17 +81,6 @@ export default class Nav extends Component {
                 <Dropdown.Item>Furniture</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
-
-
-        <Menu.Menu position='right'>
-            <Menu.Item
-            fitted
-            >
-              <Image src={Logo} alt ="logo" size='small'/>
-            </Menu.Item>
-        </Menu.Menu>
-        
-
         <Menu.Menu position='right'>
         <Menu.Item>
             <Button primary>Sign Up</Button>
