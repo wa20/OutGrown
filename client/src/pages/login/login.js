@@ -12,7 +12,7 @@ const LoginForm = () => {
             <Header as='h2' color='teal' textAlign='center'> Log-in to your account</Header>
             <Form size='large'>
                 <Segment style={{width: 450}}>
-                    <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
+                    <Form.Input fluid icon='mail' iconPosition='left' placeholder='E-mail address' />
                     <Form.Input
                         fluid
                         icon='lock'
