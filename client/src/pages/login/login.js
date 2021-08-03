@@ -28,7 +28,7 @@ const LoginForm = () => {
             </Form>
             <Divider horizontal>Or</Divider>
             <Message style={{width: 450}}>
-                New to us? <a href='#'>Sign Up</a>
+                New to us? <a href='/signup'>Sign Up</a>
             </Message>
             </Grid.Column>
         </Grid>

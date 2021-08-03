@@ -16,6 +16,7 @@ export default class Nav extends Component {
         <Menu.Item
             name='logo'
             active={activeItem === 'logo'}
+            href='/'
         >
             <Image src={Logo} alt ="logo" size='tiny'/>
         </Menu.Item>
@@ -23,6 +24,7 @@ export default class Nav extends Component {
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
+          href='/'
         >
           Home
         </Menu.Item>
@@ -83,11 +85,11 @@ export default class Nav extends Component {
         </Dropdown>
         <Menu.Menu position='right'>
         <Menu.Item>
-            <Button primary>Sign Up</Button>
+            <Button primary href='/signup'>Sign Up</Button>
           </Menu.Item>
 
           <Menu.Item>
-            <Button>Sign In</Button>
+            <Button href='/login'>Sign In</Button>
           </Menu.Item>
         </Menu.Menu>
       </Menu>
