@@ -12,6 +12,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Home from './pages/Home/home-page';
 
 import Nav from './components/navbar/navbar';
+import LoginForm from './pages/login/login';
 
 
 const httpLink = createHttpLink({
@@ -42,6 +43,7 @@ function App() {
         <div>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={LoginForm} />
             </Switch>
         </div>
       </Router>
