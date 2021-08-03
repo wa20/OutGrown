@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Divider, Button, Header, Image } from 'semantic-ui-react'
+import { Container, Button, Header, Image } from 'semantic-ui-react'
 import Logo from '../../assets/outgrownLogo.png'
 
 const Hero = () => (
