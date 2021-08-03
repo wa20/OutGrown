@@ -12,7 +12,7 @@ export default class Nav extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu size='tiny'>
+      <Menu stackable size='tiny'>
         <Menu.Item
             name='logo'
             active={activeItem === 'logo'}
