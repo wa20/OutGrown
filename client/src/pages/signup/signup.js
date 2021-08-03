@@ -29,7 +29,7 @@ const SignupForm = () => {
             </Form>
             <Divider horizontal>Or</Divider>
             <Message style={{width: 450}}>
-                <a href='#'>Return to log in</a>
+                <a href='/login'>Return to log in</a>
             </Message>
             </Grid.Column>
         </Grid>
