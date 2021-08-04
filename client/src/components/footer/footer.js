@@ -35,17 +35,17 @@ const Footer = () => (
             <List link inverted>
               <List.Item as='a'>Sitemap</List.Item>
               <List.Item as='a'>Contact Us</List.Item>
-              <List.Item as='a'>Ceremonies</List.Item>
-              <List.Item as='a'>Gazebo Plans</List.Item>
+              <List.Item as='a'>About Us</List.Item>
+              {/* <List.Item as='a'>Gazebo Plans</List.Item> */}
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Header inverted as='h4' content='Services' />
+            <Header inverted as='h4' content='T&Cs' />
             <List link inverted>
-              <List.Item as='a'>Banana Pre-Order</List.Item>
-              <List.Item as='a'>DNA FAQ</List.Item>
-              <List.Item as='a'>How To Access</List.Item>
-              <List.Item as='a'>Favorite X-Men</List.Item>
+              <List.Item as='a'>Terms of Service</List.Item>
+              <List.Item as='a'>Privacy Policy</List.Item>
+              <List.Item as='a'>Refund Policy</List.Item>
+              <List.Item as='a'>FAQ</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={7}>

@@ -10,9 +10,10 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Placeholder, Button } from 'semantic-ui-react'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+// import {Segment} from "semantic-ui-react";
+import { Placeholder, Button, Segment } from 'semantic-ui-react'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,7 @@ export default function MediaControlCard() {
   const theme = useTheme();
 
   return (
+    <Segment style={{ padding: '4em 0em' }} vertical>
     <Card>
       <div className={classes.root}>
       <Grid container spacing={12}>
@@ -83,5 +85,6 @@ export default function MediaControlCard() {
         title="Live from space album cover"
       />
     </Card>
+    </Segment>
   );
 }
