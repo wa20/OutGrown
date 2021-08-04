@@ -1,36 +1,45 @@
 import React from 'react'
-import { Container, Button, Header, Placeholder, Card } from 'semantic-ui-react'
+import {
+    Button,
+    Container,
+    Divider,
+    Grid,
+    Placeholder,
+    Header,
+    Icon,
+    Image,
+    List,
+    Menu,
+    Segment,
+    Sidebar,
+    Visibility,
+  } from "semantic-ui-react";
 
 const RecentlyListed = () => (
-    <Container text textAlign="center">
-        <Header as="h1">Recently Listed</Header>
-        <Card.Group itemsPerRow={3}>
-            <Card>
-                <Card.Content>
-                <Placeholder>
-                    <Placeholder.Image square />
-                </Placeholder>
-                <Button primary size="tiny">See More</Button>
-                </Card.Content>
-            </Card>
-            <Card>
-                <Card.Content>
-                <Placeholder>
-                    <Placeholder.Image square />
-                </Placeholder>
-                <Button primary size="tiny">See More</Button>
-                </Card.Content>
-            </Card>
-            <Card>
-                <Card.Content>
-                <Placeholder>
-                    <Placeholder.Image square />
-                </Placeholder>
-                <Button primary size="tiny">See More</Button>
-                </Card.Content>
-            </Card>
-        </Card.Group>
-    </Container>
+
+
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Grid container stackable verticalAlign='middle'>
+        <Grid.Row>
+          <Grid.Column textAlign="center" width={8}>
+            <Header as='h3'  style={{ fontSize: '2em' }}>
+              OutGrown
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              The hootin tootin site for parents to buy, sell or swap outgrown baby goods... blurb blurb something somthing somthing.....
+            </p>
+           
+          </Grid.Column>
+          <Grid.Column floated='right' width={6}>
+          <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
 )
 
 export default RecentlyListed
