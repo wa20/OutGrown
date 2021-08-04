@@ -38,18 +38,18 @@ const { MediaContextProvider, Media } = createMedia({
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    {/* <Header
+    <Header
       as='h1'
-      content='outgrown'
+      content='Outgrown'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
+        paddingTop: 30
       }}
-    /> */}
-    <Image src={Logo} fluid />
+    />
     <Header
       as='h2'
       content='Do whatever you want when you want to.'
