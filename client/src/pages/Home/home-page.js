@@ -3,13 +3,28 @@ import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import RecentlyListed from "../../components/recently-listed/recently-listed"
 import Favorites from "../../components/favourites/favourites"
-import { Divider, Grid, Placeholder } from 'semantic-ui-react'
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Placeholder,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
 
 const Home = () => {
     return (
+      <div>
       <div className="container">
           <Hero />
-          <Divider />
+          {/* <Divider /> */}
           <div>
           
           <Grid divided='vertically'>
@@ -35,15 +50,18 @@ const Home = () => {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Divider />
+          {/* <Divider /> */}
 
           <Favorites />
-          <Divider />
+          {/* <Divider /> */}
 
-          <Footer />
+         
 
           </div>
+          
       </div>
+<Footer />
+</div>
     );
   };
 
