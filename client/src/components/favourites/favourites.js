@@ -10,9 +10,10 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Placeholder } from 'semantic-ui-react'
+import { Placeholder, Button } from 'semantic-ui-react'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,6 +56,7 @@ export default function MediaControlCard() {
             <Placeholder style={{ height: 200}}>
                 <Placeholder.Image />
             </Placeholder>
+            <Button primary fluid>Click Here</Button>
         </Grid>
 
         <Grid item xs={2}>
