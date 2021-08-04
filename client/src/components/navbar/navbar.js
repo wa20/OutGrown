@@ -1,7 +1,6 @@
-import Logo from '../../assets/outgrownLogo.png'
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -30,6 +29,15 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Image } from 'semantic-ui-react'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import InputBase from '@material-ui/core/InputBase';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import MoreIcon from '@material-ui/icons/MoreVert';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +47,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
   },
   list: {
     width: 250,
@@ -47,14 +58,30 @@ const useStyles = makeStyles((theme) => ({
   fullList: {
     width: 'auto',
   },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
 }));
 
 
 function ElevationScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -157,62 +184,180 @@ export default function NavBar(props) {
     </div>
   );
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="secondary">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+          <Badge badgeContent={11} color="secondary">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
+
   return (
-    <div>
+    <div >
         <React.Fragment>
           <CssBaseline />
           <ElevationScroll {...props}>
-            <AppBar color='white'>
+            <div className={classes.grow} >
+            <div className={classes.sectionDesktop}>  
+              <AppBar color='white'>
               <Toolbar>
-                <IconButton 
-                  onClick={toggleDrawer('left', true)} 
-                  edge="start" 
-                  className={classes.menuButton} 
-                  color="inherit" 
-                  aria-label="menu"
+                <Button color="inherit">Home</Button>
+                <Button color="inherit">Marketplace</Button>
+                <Button onClick={handleClick}>
+                  Categories
+                </Button>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
                 >
-                  <MenuIcon  />
-                </IconButton>
+                  <MenuItem onClick={handleClose}>Newborn</MenuItem>
+                  <MenuItem onClick={handleClose}>Toys</MenuItem>
+                  <MenuItem onClick={handleClose}>Clothes</MenuItem>
+                  <MenuItem onClick={handleClose}>Travel</MenuItem>
+                  <MenuItem onClick={handleClose}>Nursery</MenuItem>
+                </Menu>
 
-                <SwipeableDrawer
-                  anchor='left'
-                  open={state['left']}
-                  onClose={toggleDrawer('left', false)}
-                  onOpen={toggleDrawer('left', true)}
-                >
-                  {list1('left')}
-                </SwipeableDrawer>
-
-                <Image
-                  src= {Logo}
-                  as='a'
-                  size='tiny'
-                  href='/'
-                  target='_blank'
-                  position='center'
-                  className={classes.title} 
-                />
-
-                <IconButton 
-                  onClick={toggleDrawer('right', true)} 
-                  edge="start" 
-                  className={classes.menuButton} 
-                  color="inherit" 
-                  aria-label="menu"
-                  >
-                    <PersonIcon  />
-                </IconButton>
-
-                <SwipeableDrawer
-                  anchor='right'
-                  open={state['right']}
-                  onClose={toggleDrawer('right', false)}
-                  onOpen={toggleDrawer('right', true)}
-                >
-                  {list2('right')}
-                </SwipeableDrawer>
+                <div className={classes.grow} />
+                 
+                <Button color="inherit">Login</Button>
+                <Button color="inherit">Sign up</Button>
+                
+                
+                
               </Toolbar>
             </AppBar>
+            </div>
+            <div className={classes.sectionMobile}>
+                  <AppBar color='white'>
+                    <Toolbar>
+                      <IconButton 
+                        onClick={toggleDrawer('left', true)} 
+                        edge="start" 
+                        className={classes.menuButton} 
+                        color="inherit" 
+                        aria-label="menu"
+                      >
+                        <MenuIcon  />
+                      </IconButton>
+
+                      <SwipeableDrawer
+                        anchor='left'
+                        open={state['left']}
+                        onClose={toggleDrawer('left', false)}
+                        onOpen={toggleDrawer('left', true)}
+                      >
+                        {list1('left')}
+                      </SwipeableDrawer>
+
+                      <div className={classes.grow} />
+                      
+                      <IconButton
+                        aria-label="show more"
+                        aria-controls={mobileMenuId}
+                        aria-haspopup="true"
+                        onClick={toggleDrawer('right', true)}
+                        color="inherit"
+                      >
+                        <PersonIcon  />
+                      </IconButton>
+                      <SwipeableDrawer
+                        anchor='right'
+                        open={state['right']}
+                        onClose={toggleDrawer('right', false)}
+                        onOpen={toggleDrawer('right', true)}
+                      >
+                        {list2('right')}
+                      </SwipeableDrawer>
+                      
+                      
+                    </Toolbar>
+                  </AppBar>
+                  
+                </div>
+            </div>
           </ElevationScroll>
           <Toolbar />
         </React.Fragment>
