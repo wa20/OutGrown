@@ -5,6 +5,7 @@ import Logo from '../../assets/outgrownLogo.png'
 const Hero = () => (
   <div>
     <Container text textAlign="center">
+        <Container >.</Container>
         <Image src={Logo} alt ="logo" size='medium' centered/>
         <Header as="h5">Exchange, buy and sell baby clothing/items</Header>
         <Button primary>Click Here</Button>

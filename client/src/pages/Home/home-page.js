@@ -11,8 +11,6 @@ const Home = () => {
           <Hero />
           <Divider />
           <div>
-          <RecentlyListed />
-          <Divider />
           
           <Grid divided='vertically'>
             <Grid.Row columns={2}>
