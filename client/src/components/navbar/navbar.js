@@ -362,7 +362,6 @@ export default function NavBar(props) {
               <AppBar color='white'>
               <Toolbar>
                 <Image src={Logo} size ="small" href="/"/>
-                <Button color="inherit" href="/">Home</Button>
                 <Button color="inherit">Marketplace</Button>
                 <Button onClick={handleClick}>
                   Categories
@@ -407,7 +406,7 @@ export default function NavBar(props) {
                       </SwipeableDrawer>
                       
                       <div className={classes.grow} />
-                      <Image src={Logo} size ="small" fluid centered/>
+                      <Image src={Logo} size ="small" href="/" fluid centered/>
                       <div className={classes.grow} />
                       <IconButton
                         aria-label="show more"
