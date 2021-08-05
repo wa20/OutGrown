@@ -25,6 +25,7 @@ import {
   Visibility,
   Accordion
 } from 'semantic-ui-react'
+import Carousel from '../../components/carousel/carousel'
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -174,8 +175,8 @@ const Home = () => {
       {/* <Hero /> */}
       <RecentlyListed />
       <HomeContent/> 
-      
-      <Favorites />
+      <Carousel />
+      {/* <Favorites /> */}
       <Footer />
 
       </ResponsiveContainer>
