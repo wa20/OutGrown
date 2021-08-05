@@ -34,7 +34,7 @@ class LoginForm extends Component {
             <Nav/>
             <Card raised centered style={{maxWidth: '100rem', minWidth: '23rem', marginTop:'5rem',marginBottom:'10rem' }} >
                 <Image src={Logo} size="medium" fluid centered style={{ marginTop: '10px'}} />
-                <Grid  style={{ height: '340px', paddingLeft: '10px' }} verticalAlign='left'>
+                <Grid  style={{ height: '340px', paddingLeft: '10px' }} verticalAlign=''>
                     <Form size="large" onSubmit={this.handleSubmit} >
                         <Grid.Row style={{marginTop:'1rem'}}>
                             <Form.Input
@@ -55,10 +55,12 @@ class LoginForm extends Component {
                                 value={password}
                                 onChange={this.handleChange}
                             />
-                            <Form.Button content='Log In' style={{width:'21rem'}} primary/>
-                            <Divider style={{width:'21rem'}} horizontal>OR</Divider>
+                        </Grid.Row>     
+
+                            <Form.Button content='Log In' style={{marginTop:'15px', width:'21rem'}} primary/>
+                            <Divider centered style={{width:'21rem'}} horizontal>OR</Divider>
                             <Button content='Sign Up' style={{width:'21rem'}} href='/signup'/>
-                        </Grid.Row>        
+                               
                             {/* <strong>onChange:</strong>
                             <pre>{JSON.stringify({ password, email }, null, 2)}</pre>
                             <strong>onSubmit:</strong>

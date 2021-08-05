@@ -69,10 +69,11 @@ class SignUpForm extends Component {
                                 value={password}
                                 onChange={this.handleChange}
                             />
-                            <Form.Button content='Create account' style={{width:'21rem'}} primary/>
+                        </Grid.Row>     
+                            <Form.Button content='Create account' style={{marginTop:'15px', width:'21rem'}} primary/>
                             <Divider style={{width:'21rem'}} horizontal>OR</Divider>
                             <Button content='Back to login screen' style={{width:'21rem'}} href="/login"/>
-                        </Grid.Row>        
+                               
                             {/* <strong>onChange:</strong>
                             <pre>{JSON.stringify({ username, password, email }, null, 2)}</pre>
                             <strong>onSubmit:</strong>
