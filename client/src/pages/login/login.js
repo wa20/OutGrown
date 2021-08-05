@@ -27,8 +27,8 @@ class LoginForm extends Component {
   
     render() {
       const { password, email, submittedPassword, submittedEmail } = this.state
-      console.log(submittedPassword)
-      console.log(submittedEmail)
+      console.log(submittedPassword + submittedEmail)
+
       return (
         <div>
             <Nav/>
@@ -57,7 +57,7 @@ class LoginForm extends Component {
                             />
                             <Form.Button content='Log In' style={{width:'21rem'}} primary/>
                             <Divider style={{width:'21rem'}} horizontal>OR</Divider>
-                            <Form.Button content='Sign Up' style={{width:'21rem'}} />
+                            <Button content='Sign Up' style={{width:'21rem'}} href='/signup'/>
                         </Grid.Row>        
                             {/* <strong>onChange:</strong>
                             <pre>{JSON.stringify({ password, email }, null, 2)}</pre>
