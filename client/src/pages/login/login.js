@@ -1,38 +1,75 @@
-import React from 'react'
-import { Container, Button, Form, Grid, Header, Image, Message, Segment, Divider } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Container, 
+    Button, 
+    Form, 
+    Grid, 
+    Header, 
+    Image, 
+    Message, 
+    Segment, 
+    Divider,
+    Card } from 'semantic-ui-react'
 import Logo from '../../assets/outgrownLogo.png'
+import Footer from "../../components/footer/footer"
+import Nav from "../../components/navbar/navbar"
 
-const LoginForm = () => {
-    return (
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-            <Grid.Column style={{ maxWidth: 450 }}>
-            <Container fluid as='h2' color='teal' textAlign='center'>
-                <Image fluid src={Logo} alt ="logo" size="small" centered/>
-            </Container>
-            <Header as='h2' color='teal' textAlign='center'> Log-in to your account</Header>
-            <Form size='large'>
-                <Segment style={{width: 450}}>
-                    <Form.Input fluid icon='mail' iconPosition='left' placeholder='E-mail address' />
-                    <Form.Input
-                        fluid
-                        icon='lock'
-                        iconPosition='left'
-                        placeholder='Password'
-                        type='password'
-                    />
-
-                    <Button color='teal' fluid size='large' >
-                        Login
-                    </Button>
-                </Segment>
-            </Form>
-            <Divider horizontal>Or</Divider>
-            <Message style={{width: 450}}>
-                New to us? <a href='/signup'>Sign Up</a>
-            </Message>
-            </Grid.Column>
-        </Grid>
-    )
-}
-
-export default LoginForm
+class LoginForm extends Component {
+    state = { password: '', email: '', submittedPassword: '', submittedEmail: '' }
+  
+    handleChange = (e, { name, value }) => this.setState({ [name]: value })
+  
+    handleSubmit = () => {
+      const { password, email } = this.state
+  
+      this.setState({ submittedPassword: password, submittedEmail: email })
+      
+    }
+  
+    render() {
+      const { password, email, submittedPassword, submittedEmail } = this.state
+      console.log(submittedPassword)
+      console.log(submittedEmail)
+      return (
+        <div>
+            <Nav/>
+            <Card raised centered style={{maxWidth: '100rem', minWidth: '23rem', marginTop:'5rem',marginBottom:'10rem' }} >
+                <Image src={Logo} size="medium" fluid centered style={{ marginTop: '10px'}} />
+                <Grid  style={{ height: '340px', paddingLeft: '10px' }} verticalAlign='left'>
+                    <Form size="large" onSubmit={this.handleSubmit} >
+                        <Grid.Row style={{marginTop:'1rem'}}>
+                            <Form.Input
+                                    style={{width:'21rem'}}
+                                    label='Email'
+                                    placeholder='Email'
+                                    name='email'
+                                    value={email}
+                                    onChange={this.handleChange}
+                                />
+                        </Grid.Row>
+                        <Grid.Row style={{marginTop:'1rem'}}>
+                            <Form.Input
+                                style={{width:'21rem'}}
+                                label='Password'
+                                placeholder='Password'
+                                name='password'
+                                value={password}
+                                onChange={this.handleChange}
+                            />
+                            <Form.Button content='Log In' style={{width:'21rem'}} primary/>
+                            <Divider style={{width:'21rem'}} horizontal>OR</Divider>
+                            <Form.Button content='Sign Up' style={{width:'21rem'}} />
+                        </Grid.Row>        
+                            {/* <strong>onChange:</strong>
+                            <pre>{JSON.stringify({ password, email }, null, 2)}</pre>
+                            <strong>onSubmit:</strong>
+                            <pre>{JSON.stringify({ submittedPassword, submittedEmail }, null, 2)}</pre> */}
+                    </Form>        
+                </Grid>
+            </Card>
+            <Footer/>
+        </div>
+      )
+    }
+  }
+  
+  export default LoginForm

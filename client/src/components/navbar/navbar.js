@@ -226,8 +226,8 @@ export default function NavBar(props) {
             <div className={classes.sectionDesktop}>  
               <AppBar color='white'>
               <Toolbar>
-                <Image src={Logo} size ="small" />
-                <Button color="inherit">Home</Button>
+                <Image src={Logo} size ="small" href="/"/>
+                <Button color="inherit" href="/">Home</Button>
                 <Button color="inherit">Marketplace</Button>
                 <Button onClick={handleClick}>
                   Categories
@@ -248,8 +248,8 @@ export default function NavBar(props) {
 
                 <div className={classes.grow} />
                  
-                <Button color="inherit">Login</Button>
-                <Button color="inherit">Sign up</Button>
+                <Button color="inherit" href="/login">Login</Button>
+                <Button color="inherit" href="/signup">Sign up</Button>
                 
                 
                 
