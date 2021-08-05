@@ -26,9 +26,9 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Image } from 'semantic-ui-react'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Logo from '../../assets/outgrownLogo.png'
+import Auth from "../../utils/auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -351,91 +351,173 @@ export default function NavBar(props) {
     setOpen(!open);
   };
   const mobileMenuId = 'primary-search-account-menu-mobile';
-  return (
-    <div >
-        <React.Fragment>
-          <CssBaseline />
-          <ElevationScroll {...props}>
-            <div className={classes.grow} >
-            <div className={classes.sectionDesktop}>  
-              <AppBar color='white'>
-              <Toolbar>
-                <Image src={Logo} size ="small" href="/"/>
-                <Button color="inherit">Marketplace</Button>
-                <Button onClick={handleClick}>
-                  Categories
-                </Button>
+  if (Auth.loggedIn()) {
+    return (
+      <div >
+          <React.Fragment>
+            <CssBaseline />
+            <ElevationScroll {...props}>
+              <div className={classes.grow} >
+              <div className={classes.sectionDesktop}>  
+                <AppBar color='white'>
+                <Toolbar>
+                  <Image src={Logo} size ="small" href="/"/>
+                  <Button color="inherit">Marketplace</Button>
+                  <Button onClick={handleClick}>
+                    Categories
+                  </Button>
 
-                <Menu
-                  id="simple-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  {list3('right')}
-                </Menu>
-                
-                <div className={classes.grow} />
-                <Button color="inherit" href="/login">Login</Button>
-                <Button color="inherit" href="/signup">Sign up</Button>
-              </Toolbar>
-            </AppBar>
-            </div>
-            <div className={classes.sectionMobile}>
-                  <AppBar color='white'>
-                    <Toolbar>
-                      <IconButton 
-                        onClick={toggleDrawer('left', true)} 
-                        edge="start" 
-                        className={classes.menuButton} 
-                        color="inherit" 
-                        aria-label="menu"
-                      >
-                        <MenuIcon  />
-                      </IconButton>
-
-                      <SwipeableDrawer
-                        anchor='left'
-                        open={state['left']}
-                        onClose={toggleDrawer('left', false)}
-                        onOpen={toggleDrawer('left', true)}
-                      >
-                        {list1('left')}
-                      </SwipeableDrawer>
-                      
-                      <div className={classes.grow} />
-                      <Image src={Logo} size ="small" href="/" fluid centered/>
-                      <div className={classes.grow} />
-                      <IconButton
-                        aria-label="show more"
-                        aria-controls={mobileMenuId}
-                        aria-haspopup="true"
-                        onClick={toggleDrawer('right', true)}
-                        color="inherit"
-                      >
-                        <PersonIcon  />
-                      </IconButton>
-                      <SwipeableDrawer
-                        anchor='right'
-                        open={state['right']}
-                        onClose={toggleDrawer('right', false)}
-                        onOpen={toggleDrawer('right', true)}
-                      >
-                        {list2('right')}
-                      </SwipeableDrawer>
-                      
-                      
-                    </Toolbar>
-                  </AppBar>
+                  <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    {list3('right')}
+                  </Menu>
                   
-                </div>
-            </div>
-          </ElevationScroll>
-          <Toolbar />
-        </React.Fragment>
+                  <div className={classes.grow} />
+                  <Button color="inherit" href="/" onClick={() => Auth.logout()}>Logout</Button>
+                </Toolbar>
+              </AppBar>
+              </div>
+              <div className={classes.sectionMobile}>
+                    <AppBar color='white'>
+                      <Toolbar>
+                        <IconButton 
+                          onClick={toggleDrawer('left', true)} 
+                          edge="start" 
+                          className={classes.menuButton} 
+                          color="inherit" 
+                          aria-label="menu"
+                        >
+                          <MenuIcon  />
+                        </IconButton>
 
-      
-    </div>
-  );
+                        <SwipeableDrawer
+                          anchor='left'
+                          open={state['left']}
+                          onClose={toggleDrawer('left', false)}
+                          onOpen={toggleDrawer('left', true)}
+                        >
+                          {list1('left')}
+                        </SwipeableDrawer>
+                        
+                        <div className={classes.grow} />
+                        <Image src={Logo} size ="small" href="/" fluid centered/>
+                        <div className={classes.grow} />
+                        <IconButton
+                          aria-label="show more"
+                          aria-controls={mobileMenuId}
+                          aria-haspopup="true"
+                          onClick={toggleDrawer('right', true)}
+                          color="inherit"
+                        >
+                          <PersonIcon  />
+                        </IconButton>
+                        <SwipeableDrawer
+                          anchor='right'
+                          open={state['right']}
+                          onClose={toggleDrawer('right', false)}
+                          onOpen={toggleDrawer('right', true)}
+                        >
+                          {list2('right')}
+                        </SwipeableDrawer>
+                        
+                        
+                      </Toolbar>
+                    </AppBar>
+                    
+                  </div>
+              </div>
+            </ElevationScroll>
+            <Toolbar />
+          </React.Fragment>
+      </div>
+    );
+  } else {
+      return (
+        <div >
+            <React.Fragment>
+              <CssBaseline />
+              <ElevationScroll {...props}>
+                <div className={classes.grow} >
+                <div className={classes.sectionDesktop}>  
+                  <AppBar color='white'>
+                  <Toolbar>
+                    <Image src={Logo} size ="small" href="/"/>
+                    <Button color="inherit">Marketplace</Button>
+                    <Button onClick={handleClick}>
+                      Categories
+                    </Button>
+
+                    <Menu
+                      id="simple-menu"
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={Boolean(anchorEl)}
+                      onClose={handleClose}
+                    >
+                      {list3('right')}
+                    </Menu>
+                    
+                    <div className={classes.grow} />
+                    <Button color="inherit" href="/login">Login</Button>
+                    <Button color="inherit" href="/signup">Sign up</Button>
+                  </Toolbar>
+                </AppBar>
+                </div>
+                <div className={classes.sectionMobile}>
+                      <AppBar color='white'>
+                        <Toolbar>
+                          <IconButton 
+                            onClick={toggleDrawer('left', true)} 
+                            edge="start" 
+                            className={classes.menuButton} 
+                            color="inherit" 
+                            aria-label="menu"
+                          >
+                            <MenuIcon  />
+                          </IconButton>
+
+                          <SwipeableDrawer
+                            anchor='left'
+                            open={state['left']}
+                            onClose={toggleDrawer('left', false)}
+                            onOpen={toggleDrawer('left', true)}
+                          >
+                            {list1('left')}
+                          </SwipeableDrawer>
+                          
+                          <div className={classes.grow} />
+                          <Image src={Logo} size ="small" href="/" fluid centered/>
+                          <div className={classes.grow} />
+                          <IconButton
+                            aria-label="show more"
+                            aria-controls={mobileMenuId}
+                            aria-haspopup="true"
+                            onClick={toggleDrawer('right', true)}
+                            color="inherit"
+                          >
+                            <PersonIcon  />
+                          </IconButton>
+                          <SwipeableDrawer
+                            anchor='right'
+                            open={state['right']}
+                            onClose={toggleDrawer('right', false)}
+                            onOpen={toggleDrawer('right', true)}
+                          >
+                            {list2('right')}
+                          </SwipeableDrawer>
+                        </Toolbar>
+                      </AppBar>
+                    </div>
+                </div>
+              </ElevationScroll>
+              <Toolbar />
+            </React.Fragment>
+        </div>
+      );
+  }  
 }
