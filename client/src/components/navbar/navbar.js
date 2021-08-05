@@ -1,25 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Slide from '@material-ui/core/Slide';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Collapse from '@material-ui/core/Collapse';
 import HomeIcon from '@material-ui/icons/Home';
 import clsx from 'clsx';
 import StoreIcon from '@material-ui/icons/Store';
@@ -29,19 +27,19 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Image } from 'semantic-ui-react'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import Logo from '../../assets/outgrownLogo.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -102,8 +100,13 @@ ElevationScroll.propTypes = {
   window: PropTypes.func,
 };
 
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
+
 export default function NavBar(props) {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(true);
 
   const [state, setState] = React.useState({
     top: false,
@@ -126,28 +129,97 @@ export default function NavBar(props) {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      /* onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)} */
     >
       <List>
-        <ListItem button>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <StoreIcon />
-            </ListItemIcon>
-            <ListItemText primary="Marketplace" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <CategoryIcon />
-            </ListItemIcon>
-            <ListItemText primary="Categories" />
-          </ListItem>
+        <ListItemLink button href="/">
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItemLink>
+        
+        <ListItemLink button>
+          <ListItemIcon>
+            <StoreIcon />
+          </ListItemIcon>
+          <ListItemText primary="Marketplace" />
+        </ListItemLink>
+
+        <ListItem button onClick={handleClickSubMenu}>
+          <ListItemIcon>
+            <CategoryIcon />
+          </ListItemIcon>
+          <ListItemText primary="Categories" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List  
+            component="div"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Newborn Items
+              </ListSubheader>
+            }
+            className={classes.root}
+          >
+            <ListItem button>
+              <ListItemLink button>
+                Toys
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Clothes
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Travel
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Nursery
+              </ListItemLink>
+            </ListItem>
+          </List>
+
+          <List  
+            component="div"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Todler Items
+              </ListSubheader>
+            }
+            className={classes.root}
+          >
+            <ListItem button>
+              <ListItemLink button>
+                Toys
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Clothes
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Travel
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Nursery
+              </ListItemLink>
+            </ListItem>
+          </List>
+        </Collapse>
       </List>
     </div>
   );
@@ -162,50 +234,111 @@ export default function NavBar(props) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button>
+        <ListItemLink button href='/login'>
             <ListItemIcon>
               <ArrowForwardIcon />
             </ListItemIcon>
             <ListItemText primary="Log In" />
-          </ListItem>
-          <ListItem button>
+          </ListItemLink>
+
+
+          <ListItemLink button href='/signup'>
             <ListItemIcon>
               <AddBoxIcon />
             </ListItemIcon>
             <ListItemText primary="Sign Up" />
-          </ListItem>
-          <ListItem button>
+          </ListItemLink>
+
+          <ListItemLink button href='#'>
             <ListItemIcon>
               <ShoppingBasketIcon />
             </ListItemIcon>
             <ListItemText primary="Basket" />
-          </ListItem>
+          </ListItemLink>
+      </List>
+    </div>
+  );
+
+  const list3 = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List  
+            component="div"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Newborn Items
+              </ListSubheader>
+            }
+            className={classes.root}
+          >
+            <ListItem button>
+              <ListItemLink button>
+                Toys
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Clothes
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Travel
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Nursery
+              </ListItemLink>
+            </ListItem>
+          </List>
+
+          <List  
+            component="div"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Todler Items
+              </ListSubheader>
+            }
+            className={classes.root}
+          >
+            <ListItem button>
+              <ListItemLink button>
+                Toys
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Clothes
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Travel
+              </ListItemLink>
+            </ListItem>
+            <ListItem button>
+              <ListItemLink button>
+                Nursery
+              </ListItemLink>
+            </ListItem>
+          </List>
+        </Collapse>
       </List>
     </div>
   );
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -215,8 +348,10 @@ export default function NavBar(props) {
     setAnchorEl(null);
   };
 
+  const handleClickSubMenu = () => {
+    setOpen(!open);
+  };
   const mobileMenuId = 'primary-search-account-menu-mobile';
-
   return (
     <div >
         <React.Fragment>
@@ -232,6 +367,7 @@ export default function NavBar(props) {
                 <Button onClick={handleClick}>
                   Categories
                 </Button>
+
                 <Menu
                   id="simple-menu"
                   anchorEl={anchorEl}
@@ -239,20 +375,12 @@ export default function NavBar(props) {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}>Newborn</MenuItem>
-                  <MenuItem onClick={handleClose}>Toys</MenuItem>
-                  <MenuItem onClick={handleClose}>Clothes</MenuItem>
-                  <MenuItem onClick={handleClose}>Travel</MenuItem>
-                  <MenuItem onClick={handleClose}>Nursery</MenuItem>
+                  {list3('right')}
                 </Menu>
-
+                
                 <div className={classes.grow} />
-                 
                 <Button color="inherit" href="/login">Login</Button>
                 <Button color="inherit" href="/signup">Sign up</Button>
-                
-                
-                
               </Toolbar>
             </AppBar>
             </div>
