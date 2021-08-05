@@ -10,11 +10,9 @@ import { setContext } from '@apollo/client/link/context';
 import 'semantic-ui-css/semantic.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home/home-page';
-
-import Nav from './components/navbar/navbar';
 import LoginForm from './pages/login/login';
 import SignupForm from './pages/signup/signup';
-import { Divider } from '@material-ui/core';
+
 
 
 const httpLink = createHttpLink({
