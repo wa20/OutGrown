@@ -1,18 +1,15 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 import { 
     Button, 
     Form, 
     Grid, 
-    Header, 
     Image, 
-    Message, 
-    Segment, 
     Divider,
-    Card } from 'semantic-ui-react'
+    Card } 
+from 'semantic-ui-react'
 import Logo from '../../assets/outgrownLogo.png'
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
