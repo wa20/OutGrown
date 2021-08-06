@@ -7,6 +7,9 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, args) => {
+      // TODO: remember mutations are functions that always take a parent and series of args. Arguments are the variables
+      // pull out the values from the args that we want, create something specific for the DB e.g. username and password from the args and send to mongoose
+
       const user = await User.create(args);
       const token = signToken(user);
 
