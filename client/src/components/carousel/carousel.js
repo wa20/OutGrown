@@ -7,15 +7,20 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
+
 import { Segment, Image } from 'semantic-ui-react'
 import Logo from '../../assets/outgrownLogo.png'
+
+import { Segment, Image } from 'semantic-ui-react'
+import "./carousel.css"
+
 
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
     },
     media: {
-      height: 140,
+      height: 100,
     },
   });
 
@@ -62,9 +67,9 @@ export default function DefaultCarousel() {
     }
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} fade>
+        <Carousel activeIndex={index} onSelect={handleSelect} fade style={{ padding: '1em 0em' }}>
             {filterProducts().map((product) => (
-              <Carousel.Item>
+              <Carousel.Item style={{height:"50vh"}}>
                 <Segment size='small'>
                   <BriefCard
                   key={product._id}

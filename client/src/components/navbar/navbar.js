@@ -140,7 +140,7 @@ export default function NavBar(props) {
           <ListItemText primary="Home" />
         </ListItemLink>
         
-        <ListItemLink button>
+        <ListItemLink button href="/marketplace">
           <ListItemIcon>
             <StoreIcon />
           </ListItemIcon>
@@ -352,6 +352,7 @@ export default function NavBar(props) {
     setOpen(!open);
   };
   const mobileMenuId = 'primary-search-account-menu-mobile';
+
   if (Auth.loggedIn()) {
     return (
       <div >
