@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home/home-page';
 import LoginForm from './pages/login/login';
 import SignupForm from './pages/signup/signup';
+
+import { StoreProvider } from './utils/globalState';
+
 import Marketplace from './pages/marketplace/marketplace';
 
 
@@ -38,17 +41,18 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/marketplace" component={Marketplace}/>
-              <Route exact path="/login" component={LoginForm} />
-              <Route exact path="/signup" component={SignupForm} />
-
-            </Switch>
-        </div>
-      </Router>
+      <StoreProvider>
+        <Router>
+          <div>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={LoginForm} />
+                <Route exact path="/login" component={LoginForm} />
+                <Route exact path="/signup" component={SignupForm} />
+              </Switch>
+          </div>
+        </Router>  
+      </StoreProvider>
     </ApolloProvider> 
   );
 }

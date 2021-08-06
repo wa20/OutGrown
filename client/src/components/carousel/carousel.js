@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Logo from '../../assets/outgrownLogo.png'
-import Stock1 from '../../assets/stock1.jpg'
-import Stock2 from '../../assets/stock2.jpg'
-import Stock3 from '../../assets/stock3.jpg'
+import BriefCard from '../brief-card/brief-card';
+import { useStoreContext } from '../../utils/globalState';
+import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { useQuery } from '@apollo/client';
+import { QUERY_PRODUCTS } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
+
+import { Segment, Image } from 'semantic-ui-react'
+import Logo from '../../assets/outgrownLogo.png'
+
 import { Segment, Image } from 'semantic-ui-react'
 import "./carousel.css"
+
 
 const useStyles = makeStyles({
     root: {
@@ -33,23 +33,54 @@ export default function DefaultCarousel() {
         setIndex(selectedIndex);
       };
 
+    const [state, dispatch] = useStoreContext();
+    const { currentCategory } = state;
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+    useEffect(() => {
+      if (data) {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: data.products,
+        });
+        data.products.forEach((product) => {
+          idbPromise('products', 'put', product);
+        });
+      } else if (!loading) {
+        idbPromise('products', 'get').then((products) => {
+          dispatch({
+            type: UPDATE_PRODUCTS,
+            products: products,
+          });
+        });
+      }
+    }, [data, loading, dispatch]);
+  
+    function filterProducts() {
+      if (!currentCategory) {
+        return state.products;
+      }
+  
+      return state.products.filter(
+        (product) => product.category._id === currentCategory
+      );
+    }
+
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} fade  style={{ padding: '1em 0em' }}>
-            <Carousel.Item style={{height:"50vh"}}>
+        <Carousel activeIndex={index} onSelect={handleSelect} fade style={{ padding: '1em 0em' }}>
+            {filterProducts().map((product) => (
+              <Carousel.Item style={{height:"50vh"}}>
                 <Segment size='small'>
-                    <Image src={Stock1} centered className="d-block w-100"/>
+                  <BriefCard
+                  key={product._id}
+                  _id={product._id}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  />
                 </Segment>
-            </Carousel.Item>
-            <Carousel.Item style={{height:"50vh"}}>
-                <Segment size='small'>
-                    <Image src={Stock2}  centered className="d-block w-100"/>
-                </Segment>
-            </Carousel.Item>
-            <Carousel.Item style={{height:"50vh" }}>
-                <Segment size='small'>
-                    <Image src={Stock3}  centered className="d-block w-100"/>
-                </Segment>
-        </Carousel.Item>
+              </Carousel.Item>  
+          ))}
       </Carousel>
     );
   }
