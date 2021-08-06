@@ -8,6 +8,8 @@ import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import RecentlyListed from "../../components/recently-listed/recently-listed"
 import Favorites from "../../components/favourites/favourites"
+import Filterbar from "../../components/filter/filter-bar"
+import MarketProducts from "../../components/marketplace-page/marketplace-page"
 import {
   Button,
   Container,
@@ -41,7 +43,7 @@ const { MediaContextProvider, Media } = createMedia({
     <Container text>
       <Header
         as='h1'
-        content='Outgrown'
+        content='Marketplace'
         inverted
         style={{
           fontSize: mobile ? '2em' : '4em',
@@ -51,7 +53,7 @@ const { MediaContextProvider, Media } = createMedia({
           paddingTop: 30
         }}
       />
-      <Header
+      {/* <Header
         as='h2'
         content='Do whatever you want when you want to.'
         inverted
@@ -62,10 +64,7 @@ const { MediaContextProvider, Media } = createMedia({
           marginBottom: '1.0em',
         }}
       />
-      <Button inverted color="red" size='huge'>
-        
-        <Icon name='shopping bag' /> Shop Now
-      </Button>
+       */}
     </Container>
   )
   
@@ -93,7 +92,7 @@ const { MediaContextProvider, Media } = createMedia({
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 700, padding: '1em 0em' }}
+              style={{ minHeight: 400, padding: '1em 0em' }}
               vertical
             >
               <HomepageHeading />
@@ -136,7 +135,7 @@ const { MediaContextProvider, Media } = createMedia({
               <Segment
                 inverted
                 textAlign="center"
-                style={{ minHeight: 350, padding: "1em 0em" }}
+                style={{ minHeight: 180, padding: "1em 0em" }}
                 vertical
               >
                 <HomepageHeading mobile />
@@ -173,6 +172,8 @@ const { MediaContextProvider, Media } = createMedia({
         <ResponsiveContainer>
         <Nav/>
         
+        <Filterbar/>
+        <MarketProducts/>
 
 
 
