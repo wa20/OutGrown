@@ -122,6 +122,7 @@ export default function NavBar(props) {
     setState({ ...state, [anchor]: open });
   };
 
+  /* Menu on left */
   const list1 = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -222,7 +223,7 @@ export default function NavBar(props) {
       </List>
     </div>
   );
-
+  /* Menu on right */
   const list2 = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -257,7 +258,7 @@ export default function NavBar(props) {
       </List>
     </div>
   );
-
+  /* Categories menu in desktop view */
   const list3 = (anchor) => (
     <div
       className={clsx(classes.list, {
