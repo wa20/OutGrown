@@ -27,7 +27,7 @@ import {
   Visibility,
   Accordion
 } from 'semantic-ui-react'
-import Carousel from '../../components/carousel/carousel'
+// import Carousel from '../../components/carousel/carousel'
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -53,18 +53,6 @@ const { MediaContextProvider, Media } = createMedia({
           paddingTop: 30
         }}
       />
-      {/* <Header
-        as='h2'
-        content='Do whatever you want when you want to.'
-        inverted
-        style={{
-          fontSize: mobile ? '1.5em' : '1.7em',
-          fontWeight: 'normal',
-          marginTop: mobile ? '0.5em' : '1.5em',
-          marginBottom: '1.0em',
-        }}
-      />
-       */}
     </Container>
   )
   
@@ -92,7 +80,7 @@ const { MediaContextProvider, Media } = createMedia({
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 400, padding: '1em 0em' }}
+              style={{ minHeight: 250, padding: '1em 0em' }}
               vertical
             >
               <HomepageHeading />
