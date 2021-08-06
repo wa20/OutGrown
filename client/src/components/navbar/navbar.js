@@ -139,7 +139,7 @@ export default function NavBar(props) {
           <ListItemText primary="Home" />
         </ListItemLink>
         
-        <ListItemLink button>
+        <ListItemLink button href="/marketplace">
           <ListItemIcon>
             <StoreIcon />
           </ListItemIcon>
@@ -361,7 +361,8 @@ export default function NavBar(props) {
               <AppBar color='white'>
               <Toolbar>
                 <Image src={Logo} size ="small" href="/"/>
-                <Button color="inherit">Marketplace</Button>
+                <Button color="inherit" href="/">Home</Button>
+                <Button color="inherit" href="/marketplace">Marketplace</Button>
                 <Button onClick={handleClick}>
                   Categories
                 </Button>
