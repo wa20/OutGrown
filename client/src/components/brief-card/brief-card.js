@@ -21,8 +21,8 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <Card centered fluid>
-      <Image src={`/images/${image}`} wrapped ui={false}/>
+    <div className="card px-1 py-1">
+      <Image as='a' size='small' src={`/images/${image}`} wrapped ui={false}/>
       <Card.Content className={classes.size}>
         <Card.Header>{name}</Card.Header>
       </Card.Content>
@@ -34,7 +34,7 @@ function ProductItem(item) {
           {description}
         </Card.Description>
       </Card.Content>
-    </Card>
+    </div>
     
   );
 }

@@ -3,9 +3,10 @@
     background-size: cover;
 }
 .carousel-item {
+    height: 300px;
     overflow: hidden;
     width: 100%;
 }
 .carousel-item img {
-    width: 0%;
+width: 100%;
 }
