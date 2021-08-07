@@ -6,8 +6,8 @@ import HomeContent from "../../components/home-content/home-content"
 import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import RecentlyListed from "../../components/recently-listed/recently-listed"
-import Favorites from "../../components/favourites/favourites"
+import Blurb from "../../components/blurb/blurb"
+
 import Filterbar from "../../components/filter/filter-bar"
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
 import {
@@ -27,7 +27,7 @@ import {
   Visibility,
   Accordion
 } from 'semantic-ui-react'
-import Carousel from '../../components/carousel/carousel'
+import Carousel from '../../components/carousel-favorites/carousel-favorites'
 
 
 const { MediaContextProvider, Media } = createMedia({

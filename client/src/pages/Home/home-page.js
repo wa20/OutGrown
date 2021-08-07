@@ -6,26 +6,17 @@ import HomeContent from "../../components/home-content/home-content"
 import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import RecentlyListed from "../../components/recently-listed/recently-listed"
-import Favorites from "../../components/favourites/favourites"
+import Blurb from "../../components/blurb/blurb"
 import {
   Button,
   Container,
-  Dropdown,
-  Divider,
-  Grid,
-  Placeholder,
   Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Segment,
   Sidebar,
   Visibility,
-  Accordion
 } from 'semantic-ui-react'
-import Carousel from '../../components/carousel/carousel'
+import Carousel from '../../components/carousel-favorites/carousel-favorites'
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -53,7 +44,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Buy and sell used baby stuff from our marketplace'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -62,7 +53,7 @@ const HomepageHeading = ({ mobile }) => (
         marginBottom: '1.0em',
       }}
     />
-    <Button inverted color="red" size='huge'>
+    <Button inverted color="red" size='huge' href='/marketplace'>
       
       <Icon name='shopping bag' /> Shop Now
     </Button>
@@ -173,9 +164,11 @@ const Home = () => {
       <ResponsiveContainer>
       <Nav/>
       {/* <Hero /> */}
-      <RecentlyListed />
+      <Blurb />
+      <Header as='h1' textAlign='center'>Our Favorites</Header>
+      <Carousel/>
       <HomeContent/> 
-      <Carousel />
+      
       {/* <Favorites /> */}
       <Footer />
 

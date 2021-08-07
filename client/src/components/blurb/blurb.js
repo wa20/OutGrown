@@ -15,13 +15,11 @@ import {
     Visibility,
   } from "semantic-ui-react";
 
-const RecentlyListed = () => (
-
-
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
+const Blurb = () => (
+    <Segment centered vertical>
+      <Grid centered container stackable verticalAlign='middle'>
         <Grid.Row>
-          <Grid.Column textAlign="center" width={8}>
+          <Grid.Column textAlign="center" width={12}>
             <Header as='h3'  style={{ fontSize: '2em' }}>
               OutGrown
             </Header>
@@ -31,15 +29,12 @@ const RecentlyListed = () => (
            
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-          <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
 
-        </Grid.Row>
       </Grid>
     </Segment>
 
 )
 
-export default RecentlyListed
+export default Blurb
