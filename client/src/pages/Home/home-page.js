@@ -17,8 +17,10 @@ import {
   Segment,
   Sidebar,
   Visibility,
+  Grid,
 } from 'semantic-ui-react'
-import Carousel from '../../components/carousel-favorites/carousel-favorites'
+import CarouselFavorites from '../../components/carousel-favorites/carousel-favorites'
+import CarouselCategories from '../../components/carousel-categories/carousel-categories'
 // import CarouselProd from '../../components/our-favourites/our-favourites'
 
 const { MediaContextProvider, Media } = createMedia({
@@ -166,7 +168,15 @@ const Home = () => {
       <Nav/>
       {/* <Hero /> */}
       <Blurb />
-      <Carousel />
+      <Grid container columns={2} style={{paddingBottom:10, paddingTop:10}}>
+        <Grid.Column width={8}>
+          <CarouselFavorites />
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <CarouselCategories />
+        </Grid.Column>
+      </Grid>
+      
       <HomeContent/> 
       {/* <CarouselProd/> */}
       {/* <CarouselBanner/> */}
