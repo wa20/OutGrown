@@ -15,7 +15,7 @@ function CategoryItem(item) {
   } = item;
 
   return (
-    <Card fluid centered style={{ height: 450 }}>
+    <Card fluid centered style={{ height: 580 }}>
       <Card.Content centered >
             <Segment>
                 <Image centered src={`/images/${image}`} ui={false} />
@@ -25,7 +25,7 @@ function CategoryItem(item) {
             <Card.Header >{name}</Card.Header>
             <Divider/>
         </Card.Content>
-        <Card.Description style={{ height: 450 }}>
+        <Card.Description style={{ height: 580 }}>
             {description}
         </Card.Description>
     </Card>

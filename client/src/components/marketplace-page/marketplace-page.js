@@ -9,7 +9,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
-import BriefCard from '../../components/brief-card/brief-card';
+import MarketplaceCard from '../../components/marketplace-card/marketplace-card';
   
 const MarketplaceResults = () => {
   const [state, dispatch] = useStoreContext();
@@ -49,7 +49,7 @@ const MarketplaceResults = () => {
         {state.products.length ? (
           <div className="flex-row">
             {filterProducts().map((product) => (
-                <BriefCard
+                <MarketplaceCard
                 key={product._id}
                 _id={product._id}
                 image={product.image}
@@ -63,6 +63,7 @@ const MarketplaceResults = () => {
         ) : (
           <h3>You haven't added any products yet!</h3>
         )}
+        
       </div>
   );
 };
