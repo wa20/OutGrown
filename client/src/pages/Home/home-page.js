@@ -181,7 +181,7 @@ const Home = () => {
       <Carousel />
       {/* <Favorites /> */}
       {/* <CarouselProd/> */}
-      <CarouselBanner/>
+      {/* <CarouselBanner/> */}
       <Footer />
 
       </ResponsiveContainer>
