@@ -26,7 +26,7 @@ import {
   Visibility,
   Accordion
 } from 'semantic-ui-react'
-import Carousel from '../../components/carousel/carousel'
+import Carousel from '../../components/carousel-favorites/carousel-favorites'
 // import CarouselProd from '../../components/our-favourites/our-favourites'
 
 
