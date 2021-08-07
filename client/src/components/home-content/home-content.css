@@ -1,0 +1,7 @@
+.DP {
+    background-image: url("../../assets/stock3.jpg");
+    background-position: center;
+    background-size: cover;
+    /* margin-top: 1rem; */
+    /* box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.541); */
+  }

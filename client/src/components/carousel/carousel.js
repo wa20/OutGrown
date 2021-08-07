@@ -8,7 +8,7 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Segment, Image } from 'semantic-ui-react'
+
 import Logo from '../../assets/outgrownLogo.png'
 
 import { Segment, Image } from 'semantic-ui-react'

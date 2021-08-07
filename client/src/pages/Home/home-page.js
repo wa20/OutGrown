@@ -7,6 +7,7 @@ import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import RecentlyListed from "../../components/recently-listed/recently-listed"
+import CarouselBanner from "../../components/banners/carousel-banner"
 import Favorites from "../../components/favourites/favourites"
 import {
   Button,
@@ -26,6 +27,7 @@ import {
   Accordion
 } from 'semantic-ui-react'
 import Carousel from '../../components/carousel/carousel'
+// import CarouselProd from '../../components/our-favourites/our-favourites'
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -172,11 +174,14 @@ const Home = () => {
     <div>
       <ResponsiveContainer>
       <Nav/>
+      
       {/* <Hero /> */}
       <RecentlyListed />
       <HomeContent/> 
       <Carousel />
       {/* <Favorites /> */}
+      {/* <CarouselProd/> */}
+      <CarouselBanner/>
       <Footer />
 
       </ResponsiveContainer>
