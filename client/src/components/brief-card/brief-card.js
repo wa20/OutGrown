@@ -1,17 +1,12 @@
 import React from "react";
 import { useStoreContext } from "../../utils/globalState";
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Segment } from 'semantic-ui-react'
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-  size: {
-    maxHeight: '200px',
-  },
-});
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-  const classes = useStyles();
+
   const {
     image,
     name,
@@ -21,21 +16,27 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <div className="card px-1 py-1">
-      <Image as='a' size='small' src={`/images/${image}`} wrapped ui={false}/>
-      <Card.Content className={classes.size}>
+    <Card fluid centered style={{ height: 450 }}>
+      <Card.Content centered >
+        <Segment>
+          <Image centered src={`/images/${image}`} ui={false} />
+        </Segment>
+      </Card.Content>
+
+      <Card.Content >
         <Card.Header>{name}</Card.Header>
       </Card.Content>
-      <Card.Content extra>
+
+      <Card.Content >
         <Card.Meta>
           <span>${price}</span>
         </Card.Meta>
-        <Card.Description>
+        <Card.Description style={{ height: 450 }}>
           {description}
         </Card.Description>
       </Card.Content>
-    </div>
-    
+      
+    </Card>
   );
 }
 

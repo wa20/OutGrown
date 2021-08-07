@@ -14,10 +14,26 @@ db.once('open', async () => {
   await Category.deleteMany();
   
   const categories = await Category.insertMany([
-    { name: 'Toys' },
-    { name: 'Clothes' },
-    { name: 'Travel' },
-    { name: 'Nursery' },
+    { 
+      name: 'Toys',
+      image: 'toys-category.jpg',
+      description:'Search our large collection of fun, playful toys to keep your babies entertained',
+    },
+    { 
+      name: 'Clothes',
+      image: 'clothes-category.jpg',
+      description:'Our clothes section contains a large variety of different items, including bodysuits, shoes, socks and more',
+    },
+    { 
+      name: 'Travel',
+      image: 'pram.jpg',
+      description:'Make sure your child stays comfy when you travel in our spacious and luxiourious strollers and prams',
+    },
+    { 
+      name: 'Nursery',
+      image: 'nursery-category.jpg',
+      description:'Buy all the nursery essentials including cribs, mattreses, baby monitors and more',
+    },
   ]);
 
   console.log('categories seeded');
@@ -34,10 +50,64 @@ db.once('open', async () => {
       price: 2.99,
     },
     {
-      name: 'Toy blocks',
+      name: 'Bath toys',
       description:
-        'Set of colourful toy blocks',
-      image: 'toy-blocks.jpg',
+        'Set of toys ideal for bath time',
+      image: 'bath-toys.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'Knitted shoes',
+      description:
+        'A pair of pink knitted shoes',
+      image: 'knitted-shoes.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'Pink shoes',
+      description:
+        'A pair of pink shoes',
+      image: 'pink-shoes.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'Play area',
+      description:
+        'Play area perfect to keep your baby entertained',
+      image: 'play-area.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'Toy sail boats',
+      description:
+        'Set of toy sail boats',
+      image: 'toy-sail-boats.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'White shirt',
+      description:
+        'White shirt',
+      image: 'white-shirt.jpg',
+      category: categories[0]._id,
+      price: 1.99,
+    },
+
+    {
+      name: 'White shirt',
+      description:
+        'White shirt',
+      image: 'white-shirt2.jpg',
       category: categories[0]._id,
       price: 1.99,
     },
