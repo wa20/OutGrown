@@ -8,12 +8,7 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
 
-
-import Logo from '../../assets/outgrownLogo.png'
-
-import { Segment, Image } from 'semantic-ui-react'
 import "./carousel.css"
-
 
 const useStyles = makeStyles({
     root: {
@@ -67,20 +62,21 @@ export default function DefaultCarousel() {
     }
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} fade style={{ padding: '1em 0em' }}>
+        <Carousel centered activeIndex={index} onSelect={handleSelect} >
             {filterProducts().map((product) => (
-              <Carousel.Item style={{height:"50vh"}}>
-                <Segment size='small'>
+              <Carousel.Item centered>
                   <BriefCard
                   key={product._id}
                   _id={product._id}
                   image={product.image}
                   name={product.name}
                   price={product.price}
+                  description={product.description}
+                  className="d-block w-100"
+                  centered
                   />
-                </Segment>
               </Carousel.Item>  
           ))}
-      </Carousel>
+      </Carousel>     
     );
   }
