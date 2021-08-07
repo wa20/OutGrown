@@ -6,7 +6,7 @@ import HomeContent from "../../components/home-content/home-content"
 import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import RecentlyListed from "../../components/recently-listed/recently-listed"
+import blurb from "../../components/blurb/blurb"
 import Filterbar from "../../components/filter/filter-bar"
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
 import {

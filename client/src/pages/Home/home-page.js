@@ -6,29 +6,20 @@ import HomeContent from "../../components/home-content/home-content"
 import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import RecentlyListed from "../../components/recently-listed/recently-listed"
+import Blurb from "../../components/blurb/blurb"
 import CarouselBanner from "../../components/banners/carousel-banner"
 
 import {
   Button,
   Container,
-  Dropdown,
-  Divider,
-  Grid,
-  Placeholder,
   Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Segment,
   Sidebar,
   Visibility,
-  Accordion
 } from 'semantic-ui-react'
 import Carousel from '../../components/carousel-favorites/carousel-favorites'
 // import CarouselProd from '../../components/our-favourites/our-favourites'
-
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -37,7 +28,6 @@ const { MediaContextProvider, Media } = createMedia({
     computer: 1024,
   },
 })
-
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -174,11 +164,10 @@ const Home = () => {
     <div>
       <ResponsiveContainer>
       <Nav/>
-      
       {/* <Hero /> */}
-      <RecentlyListed />
-      <HomeContent/> 
+      <Blurb />
       <Carousel />
+      <HomeContent/> 
       {/* <CarouselProd/> */}
       {/* <CarouselBanner/> */}
       <Footer />
