@@ -15,7 +15,7 @@ import {
     Visibility,
   } from "semantic-ui-react";
 
-const RecentlyListed = () => (
+const Blurb = () => (
 
 
     <Segment style={{ padding: '8em 0em' }} vertical>
@@ -41,4 +41,4 @@ const RecentlyListed = () => (
 
 )
 
-export default RecentlyListed
+export default Blurb
