@@ -8,7 +8,7 @@ import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import RecentlyListed from "../../components/recently-listed/recently-listed"
 import CarouselBanner from "../../components/banners/carousel-banner"
-import Favorites from "../../components/favourites/favourites"
+
 import {
   Button,
   Container,
@@ -179,7 +179,6 @@ const Home = () => {
       <RecentlyListed />
       <HomeContent/> 
       <Carousel />
-      {/* <Favorites /> */}
       {/* <CarouselProd/> */}
       {/* <CarouselBanner/> */}
       <Footer />
