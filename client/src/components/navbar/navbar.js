@@ -364,8 +364,7 @@ export default function NavBar(props) {
                 <AppBar color='white'>
                 <Toolbar>
                   <Image src={Logo} size ="small" href="/"/>
-                  <Button color="inherit" href="/">Home</Button>
-                  <Button color="inherit" href="/marketplace">Marketplace</Button>
+                  <Button color="inherit" href='/marketplace'>Marketplace</Button>
                   <Button onClick={handleClick}>
                     Categories
                   </Button>
@@ -450,8 +449,7 @@ export default function NavBar(props) {
                   <AppBar color='white'>
                   <Toolbar>
                     <Image src={Logo} size ="small" href="/"/>
-                    <Button color="inherit" href="/">Home</Button>
-                    <Button color="inherit" href="/marketplace" >Marketplace</Button>
+                    <Button color="inherit">Marketplace</Button>
                     <Button onClick={handleClick}>
                       Categories
                     </Button>
