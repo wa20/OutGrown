@@ -70,7 +70,7 @@ db.once('open', async () => {
       description:
         'A pair of pink knitted shoes',
       image: 'knitted-shoes.jpg',
-      category: categories[0]._id,
+      category: categories[1]._id,
       price: 1.99,
     },
 
@@ -79,7 +79,7 @@ db.once('open', async () => {
       description:
         'A pair of pink shoes',
       image: 'pink-shoes.jpg',
-      category: categories[0]._id,
+      category: categories[1]._id,
       price: 1.99,
     },
 
@@ -100,23 +100,21 @@ db.once('open', async () => {
       category: categories[0]._id,
       price: 1.99,
     },
-
     {
       name: 'White shirt',
       description:
         'White shirt',
       image: 'white-shirt.jpg',
-      category: categories[0]._id,
+      category: categories[1],
       price: 1.99,
     },
-
     {
       name: 'White shirt',
 
       description:
         'White shirt',
       image: 'white-shirt2.jpg',
-      category: categories[0]._id,
+      category: categories[1]._id,
       price: 1.99,
     },
   ])
