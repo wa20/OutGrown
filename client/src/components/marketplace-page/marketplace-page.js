@@ -19,8 +19,7 @@ const MarketplaceResults = () => {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterOption, setFilterOption] = useState("");
-
+  const [filterChoice, setfilterChoice] = useState();
   useEffect(() => {
     if (data) {
       dispatch({
@@ -40,25 +39,30 @@ const MarketplaceResults = () => {
     }
   }, [data, loading, dispatch]);
 
+
   function filterProducts() {
+    console.log(searchTerm)
+    console.log(filterChoice)
     if (!searchTerm) {
+      console.log(state.products)
       return state.products;
     }
-    if(filterOption) {
-      console.log("hello")
+    if (filterChoice === 'name') {
+      return state.products.filter(
+        (product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
     }
-    return state.products.filter(
-      (product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    if (filterChoice === 'category') {
+      return state.products.filter(
+        (product) => product.category.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
   }
 
-  function handleChange(filter) {
-    console.log(filter)
-    setFilterOption(filter);
-  }
   const options = [
-    { key: 'name', text: 'name', value: 'name' },
-    { key: 'categories', text: 'categories', value: 'category' },
+    { key: 'name', text: 'Item name', value: 'name' },
+    { key: 'categories', text: 'Categories', value: 'category' },
   ]
 
   return (
@@ -71,7 +75,7 @@ const MarketplaceResults = () => {
            action={
             <select  
               onChange={(event) => {
-                handleChange(event.target.value)
+                setfilterChoice(event.target.value)
               }} 
               >
               {options.map((option) => (
