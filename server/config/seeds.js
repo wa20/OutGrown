@@ -42,7 +42,7 @@ db.once('open', async () => {
   await Product.deleteMany();
 
   const paramId = new mongoose.Types.ObjectId()
-  console.log(pramId)
+  console.log(paramId)
 
   const products = await Product.insertMany([
     {

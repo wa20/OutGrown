@@ -33,7 +33,6 @@ export default function DefaultCarousel() {
       };
 
     const [state, dispatch] = useStoreContext();
-    const { currentCategory } = state;
     const { loading, data } = useQuery(QUERY_PRODUCTS);
 
     useEffect(() => {
@@ -56,13 +55,7 @@ export default function DefaultCarousel() {
     }, [data, loading, dispatch]);
   
     function filterProducts() {
-      if (!currentCategory) {
         return state.products;
-      }
-  
-      return state.products.filter(
-        (product) => product.category._id === currentCategory
-      );
     }
 
     return (

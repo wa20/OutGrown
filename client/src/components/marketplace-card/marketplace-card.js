@@ -1,8 +1,6 @@
 import React from "react";
 import { useStoreContext } from "../../utils/globalState";
-import { Card, Icon, Image, Segment } from 'semantic-ui-react'
-import { makeStyles } from '@material-ui/core/styles';
-
+import { Card, Image, Segment } from 'semantic-ui-react'
 
 function MarketplaceCard(item) {
   const [state, dispatch] = useStoreContext();
@@ -34,16 +32,3 @@ function MarketplaceCard(item) {
 }
 
 export default MarketplaceCard;
-{/* <div className="card px-1 py-1">
-
-        <img
-          alt={name}
-          src={`/images/${image}`}
-        />
-        <p>{name}</p>
-
-      <div>
-        <span>${price}</span>
-      </div>
-
-    </div> */}
