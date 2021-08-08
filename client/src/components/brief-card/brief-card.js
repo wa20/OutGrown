@@ -1,6 +1,6 @@
 import React from "react";
 import { useStoreContext } from "../../utils/globalState";
-import { Card, Icon, Image, Segment } from 'semantic-ui-react'
+import { Card, Icon, Image, Segment, Divider } from 'semantic-ui-react'
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -16,26 +16,20 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <Card fluid centered style={{ height: 580 }}>
+    <Card fluid centered style={{ height: '82ex' }}>
       <Card.Content centered >
         <Segment>
-          <Image centered src={`/images/${image}`} ui={false} />
+          <Image style={{ height: '50ex' }} centered src={`/images/${image}`} ui={false} />
         </Segment>
-      </Card.Content>
-
-      <Card.Content >
         <Card.Header>{name}</Card.Header>
-      </Card.Content>
-
-      <Card.Content >
+        <Divider/>
+        <Card.Description>
+          {description}
+        </Card.Description>        
         <Card.Meta>
           <span>${price}</span>
         </Card.Meta>
-        <Card.Description style={{ height: '45em' }}>
-          {description}
-        </Card.Description>
-      </Card.Content>
-      
+      </Card.Content>   
     </Card>
   );
 }

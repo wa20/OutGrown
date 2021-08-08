@@ -165,23 +165,22 @@ const Home = () => {
   return (
     <div>
       <ResponsiveContainer>
-      <Nav/>
-      {/* <Hero /> */}
-      <Blurb />
-      <Grid stackable columns={2} style={{paddingBottom:10, paddingTop:10}}>
-        <Grid.Column centered width={8}>
-          <CarouselFavorites />
-        </Grid.Column>
-        <Grid.Column centered width={8}>
-          <CarouselCategories />
-        </Grid.Column>
-      </Grid>
-      
-      <HomeContent/> 
-      {/* <CarouselProd/> */}
-      {/* <CarouselBanner/> */}
-      <Footer />
-
+        <Nav/>
+        {/* <Hero /> */}
+        <Blurb />
+        <Grid stackable columns={2} style={{paddingBottom:10, paddingTop:10}}>
+          <Grid.Column centered width={8}>
+            <CarouselFavorites />
+          </Grid.Column>
+          <Grid.Column centered width={8}>
+            <CarouselCategories />
+          </Grid.Column>
+        </Grid>
+        
+        <HomeContent/> 
+        {/* <CarouselProd/> */}
+        {/* <CarouselBanner/> */}
+        <Footer />
       </ResponsiveContainer>
     </div>
   );
