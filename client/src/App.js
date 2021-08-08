@@ -13,6 +13,7 @@ import Home from './pages/Home/home-page';
 import LoginForm from './pages/login/login';
 import SignupForm from './pages/signup/signup';
 import Marketplace from './pages/marketplace/marketplace';
+import ProfilePage from './pages/profilePage/profilePage';
 
 import { StoreProvider } from './utils/globalState';
 
@@ -49,6 +50,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/marketplace" component={Marketplace}/>
                 <Route exact path="/login" component={LoginForm} />
+                <Route exact path="/Profile" component={ProfilePage} />
                 {/* <Route exact path="/login" component={LoginForm} /> */}
                 <Route exact path="/signup" component={SignupForm} />
               </Switch>
