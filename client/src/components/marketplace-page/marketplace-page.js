@@ -45,7 +45,7 @@ const MarketplaceResults = () => {
     );
   }
   return (
-      <div className="my-2"> 
+      <div> 
         {state.products.length ? (
           <div className="flex-row">
             {filterProducts().map((product) => (

@@ -16,18 +16,12 @@ function MarketplaceCard(item) {
   } = item;
 
   return (
-    <Card centered style={{ height: 400 }}>
+    <Card centered style={{ height: '50ex' }}>
       <Card.Content  >
         <Segment>
-          <Image  src={`/images/${image}`} ui={false} />
+          <Image style={{ height: '25ex' }} src={`/images/${image}`} ui={false} />
         </Segment>
-      </Card.Content>
-
-      <Card.Content >
         <Card.Header>{name}</Card.Header>
-      </Card.Content>
-
-      <Card.Content >
         <Card.Meta>
           <span>${price}</span>
         </Card.Meta>
@@ -35,7 +29,6 @@ function MarketplaceCard(item) {
           {description}
         </Card.Description>
       </Card.Content>
-      
     </Card>
   );
 }

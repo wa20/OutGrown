@@ -15,19 +15,17 @@ function CategoryItem(item) {
   } = item;
 
   return (
-    <Card fluid centered style={{ height: 580 }}>
+    <Card fluid centered style={{ height: '82ex' }}>
       <Card.Content centered >
-            <Segment>
-                <Image centered src={`/images/${image}`} ui={false} />
-            </Segment>
-        </Card.Content>
-        <Card.Content >
-            <Card.Header >{name}</Card.Header>
-            <Divider/>
-        </Card.Content>
-        <Card.Description style={{ height: 580 }}>
-            {description}
+        <Segment>
+            <Image style={{ height: '50ex' }} centered src={`/images/${image}`} ui={false} />
+        </Segment>
+        <Card.Header >{name}</Card.Header>
+        <Divider/>
+        <Card.Description textAlign='center'>
+          {description}
         </Card.Description>
+      </Card.Content>
     </Card>
   );
 }

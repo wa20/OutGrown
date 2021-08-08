@@ -67,8 +67,7 @@ export default function DefaultCarousel() {
 
     return (
       <Card centered className="py-2" style={{width:600}}>
-        <Header> Our Favorites</Header>
-        <Divider/>
+        <Header > Our Favorites</Header>
           <Carousel  activeIndex={index} onSelect={handleSelect} >
               {filterProducts().map((product) => (
                 <Carousel.Item centered>

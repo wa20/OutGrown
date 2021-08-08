@@ -16,29 +16,19 @@ import {
   } from "semantic-ui-react";
 
 const Blurb = () => (
-
-
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column textAlign="center" width={8}>
-            <Header as='h3'  style={{ fontSize: '2em' }}>
+          <Grid.Column textAlign="center" width={16}>
+            <Header textAlign='center' as='h3'  style={{ fontSize: '2em' }}>
               OutGrown
             </Header>
             <p style={{ fontSize: '1.33em' }}>
               The hootin tootin site for parents to buy, sell or swap outgrown baby goods... blurb blurb something somthing somthing.....
             </p>
-           
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
 
-        </Grid.Row>
+          </Grid.Column>
       </Grid>
     </Segment>
-
 )
 
 export default Blurb
