@@ -19,7 +19,7 @@ const MarketplaceResults = () => {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterChoice, setfilterChoice] = useState();
+  const [filterChoice, setfilterChoice] = useState("name");
   useEffect(() => {
     if (data) {
       dispatch({
