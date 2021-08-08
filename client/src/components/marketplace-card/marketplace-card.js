@@ -4,7 +4,7 @@ import { Card, Icon, Image, Segment } from 'semantic-ui-react'
 import { makeStyles } from '@material-ui/core/styles';
 
 
-function ProductItem(item) {
+function MarketplaceCard(item) {
   const [state, dispatch] = useStoreContext();
 
   const {
@@ -16,10 +16,10 @@ function ProductItem(item) {
   } = item;
 
   return (
-    <Card fluid centered style={{ height: 580 }}>
-      <Card.Content centered >
+    <Card centered style={{ height: 400 }}>
+      <Card.Content  >
         <Segment>
-          <Image centered src={`/images/${image}`} ui={false} />
+          <Image  src={`/images/${image}`} ui={false} />
         </Segment>
       </Card.Content>
 
@@ -31,7 +31,7 @@ function ProductItem(item) {
         <Card.Meta>
           <span>${price}</span>
         </Card.Meta>
-        <Card.Description style={{ height: '45em' }}>
+        <Card.Description>
           {description}
         </Card.Description>
       </Card.Content>
@@ -40,4 +40,17 @@ function ProductItem(item) {
   );
 }
 
-export default ProductItem;
+export default MarketplaceCard;
+{/* <div className="card px-1 py-1">
+
+        <img
+          alt={name}
+          src={`/images/${image}`}
+        />
+        <p>{name}</p>
+
+      <div>
+        <span>${price}</span>
+      </div>
+
+    </div> */}

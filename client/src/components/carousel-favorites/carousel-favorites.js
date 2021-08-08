@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
+import { Card, Divider, Header } from 'semantic-ui-react'
 
 import "./carousel.css"
 
@@ -14,15 +15,18 @@ const useStyles = makeStyles({
     root: {
       maxWidth: 345,
     },
-    media: {
-      height: 100,
+    cardPadding: {
+      paddingTop: 10,
     },
+    cardSize:{
+      height: 600
+    }
   });
 
 
 
 export default function DefaultCarousel() {
-
+    const classes = useStyles();
     const [index, setIndex] = React.useState(0);
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -62,21 +66,23 @@ export default function DefaultCarousel() {
     }
 
     return (
-        <Carousel centered activeIndex={index} onSelect={handleSelect} >
-            {filterProducts().map((product) => (
-              <Carousel.Item centered>
-                  <BriefCard
-                  key={product._id}
-                  _id={product._id}
-                  image={product.image}
-                  name={product.name}
-                  price={product.price}
-                  description={product.description}
-                  className="d-block w-100"
-                  centered
-                  />
-              </Carousel.Item>  
-          ))}
-      </Carousel>     
+      <Card centered className="py-2" style={{width:600}}>
+        <Header> Our Favorites</Header>
+        <Divider/>
+          <Carousel  activeIndex={index} onSelect={handleSelect} >
+              {filterProducts().map((product) => (
+                <Carousel.Item centered>
+                    <BriefCard
+                    key={product._id}
+                    _id={product._id}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    description={product.description}
+                    />
+                </Carousel.Item>  
+            ))}
+          </Carousel>
+      </Card>
     );
   }
