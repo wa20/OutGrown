@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   Grid,
+  Input,
 } from 'semantic-ui-react'
 import { useStoreContext } from '../../utils/globalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -15,6 +16,8 @@ const MarketplaceResults = () => {
   const [state, dispatch] = useStoreContext();
   const { currentCategory } = state;
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     if (data) {
@@ -36,16 +39,25 @@ const MarketplaceResults = () => {
   }, [data, loading, dispatch]);
 
   function filterProducts() {
-    if (!currentCategory) {
+    if (!searchTerm) {
       return state.products;
     }
 
     return state.products.filter(
-      (product) => product.category._id === currentCategory
+      (product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+
+
   return (
       <div> 
+        <Input
+          type="text" 
+          placeholder='Search...'
+          onChange={(event) => {
+            setSearchTerm(event.target.value)
+          }} 
+        />
         {state.products.length ? (
           <div className="flex-row">
             {filterProducts().map((product) => (

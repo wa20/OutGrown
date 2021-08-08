@@ -1,39 +1,23 @@
 import React, { Component, useEffect } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
-import Logo from '../../assets/outgrownLogo.png'
-import HomeContent from "../../components/home-content/home-content"
-import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import blurb from "../../components/blurb/blurb"
-import Filterbar from "../../components/filter/filter-bar"
+import CategoryMenu from "../../components/CategoryMenu/category-menu";
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
+import Filterbar from "../../components/filter/filter-bar"
 import {
-  Button,
   Container,
-  Dropdown,
-  Divider,
-  Grid,
-  Placeholder,
   Header,
-  Icon,
-  Image,
-  List,
-  Menu,
   Segment,
   Sidebar,
   Visibility,
-  Accordion
 } from 'semantic-ui-react'
 import { useStoreContext } from '../../utils/globalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import { makeStyles } from '@material-ui/core/styles';
-import BriefCard from '../../components/brief-card/brief-card';
-// import Carousel from '../../components/carousel/carousel'
 
 
 const { MediaContextProvider, Media } = createMedia({
@@ -43,8 +27,7 @@ const { MediaContextProvider, Media } = createMedia({
       computer: 1024,
     },
   })
-  
-  
+   
   const HomepageHeading = ({ mobile }) => (
     <Container text>
       <Header
@@ -162,7 +145,6 @@ const { MediaContextProvider, Media } = createMedia({
   
   const Marketplace = () => {
     const [state, dispatch] = useStoreContext();
-    const { currentCategory } = state;
     const { loading, data } = useQuery(QUERY_PRODUCTS);
 
     useEffect(() => {
@@ -184,36 +166,13 @@ const { MediaContextProvider, Media } = createMedia({
       }
     }, [data, loading, dispatch]);
   
-    function filterProducts() {
-      if (!currentCategory) {
-        return state.products;
-      }
-  
-      return state.products.filter(
-        (product) => product.category._id === currentCategory
-      );
-    }
     return (
       <div>
         <ResponsiveContainer>
         <Nav/>
-        <Filterbar/>
+        {/* <Filterbar/> */}
+        <CategoryMenu />
           <MarketProducts/>
-          {/* <div> 
-            {filterProducts().map((product) => (
-                  <BriefCard
-                  key={product._id}
-                  _id={product._id}
-                  image={product.image}
-                  name={product.name}
-                  price={product.price}
-                  description={product.description}
-                  className="d-block w-100"
-                  centered
-                  /> 
-          ))}
-          </div> */}
-
         <Footer />
         </ResponsiveContainer>
       </div>
