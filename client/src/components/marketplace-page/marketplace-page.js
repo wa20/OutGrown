@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {
   Grid,
   Input,
+  Dropdown,
 } from 'semantic-ui-react'
 import { useStoreContext } from '../../utils/globalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -18,6 +19,7 @@ const MarketplaceResults = () => {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterOption, setFilterOption] = useState("");
 
   useEffect(() => {
     if (data) {
@@ -42,16 +44,52 @@ const MarketplaceResults = () => {
     if (!searchTerm) {
       return state.products;
     }
-
+    if(filterOption) {
+      console.log("hello")
+    }
     return state.products.filter(
       (product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 
+  function handleChange(filter) {
+    console.log(filter)
+    setFilterOption(filter);
+  }
+  const options = [
+    { key: 'name', text: 'name', value: 'name' },
+    { key: 'categories', text: 'categories', value: 'category' },
+  ]
 
   return (
       <div> 
         <Input
+          fluid
+          icon='search'
+          iconPosition='left'
+          style = {{margin:'2ex',padding:'1ex'}}
+           action={
+            <select  
+              onChange={(event) => {
+                handleChange(event.target.value)
+              }} 
+              >
+              {options.map((option) => (
+                <option value={option.value}>{option.text}</option>
+              ))}
+            </select>
+/*            <Dropdown
+             
+              button 
+              basic 
+              floating 
+              options={options} 
+              defaultValue='page'
+              onChange={(event) => {
+                setFilterOption(event.target.value)
+              }}
+              />*/
+          } 
           type="text" 
           placeholder='Search...'
           onChange={(event) => {

@@ -171,7 +171,7 @@ const { MediaContextProvider, Media } = createMedia({
         <ResponsiveContainer>
         <Nav/>
         {/* <Filterbar/> */}
-        <CategoryMenu />
+        {/* <CategoryMenu /> */}
           <MarketProducts/>
         <Footer />
         </ResponsiveContainer>
