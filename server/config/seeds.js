@@ -1,5 +1,6 @@
 const db = require('./connection');
 const { User, Product, Category } = require('../models');
+const mongoose = require('mongoose')
 
 db.once('open', async () => {
 
@@ -40,8 +41,13 @@ db.once('open', async () => {
 
   await Product.deleteMany();
 
+  const paramId = new mongoose.Types.ObjectId()
+  console.log(pramId)
+
   const products = await Product.insertMany([
     {
+      //genereated ID manually 
+      _id: paramId, 
       name: 'Pram',
       description:
         'Slightly used pram',
@@ -50,6 +56,7 @@ db.once('open', async () => {
       price: 2.99,
     },
     {
+
       name: 'Bath toys',
       description:
         'Set of toys ideal for bath time',
@@ -105,6 +112,7 @@ db.once('open', async () => {
 
     {
       name: 'White shirt',
+
       description:
         'White shirt',
       image: 'white-shirt2.jpg',
