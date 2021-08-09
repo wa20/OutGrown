@@ -21,8 +21,13 @@ type User {
     _id: ID
     userame: String
     email: String
+    street: String
+    townCity: String
+    postCode: String
   }
-  type Auth {
+
+  
+type Auth {
     token: ID
     user: User
   }
