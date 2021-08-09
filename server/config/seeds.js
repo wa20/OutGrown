@@ -10,6 +10,12 @@ db.once('open', async () => {
     username: 'freddieb12345',
     email: 'freddiebrewin@live.com',
     password: 'password12345',
+    // address {
+      street: "29 Fade Street",
+      townCity: "Fadded City",
+      postCode: "FA9 3ED",
+    // },
+    product: product[2]._id
   });
 
   await Category.deleteMany();
