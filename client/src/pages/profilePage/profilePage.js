@@ -6,9 +6,14 @@ import HomeContent from "../../components/home-content/home-content"
 import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import blurb from "../../components/blurb/blurb"
-import Filterbar from "../../components/filter/filter-bar"
-import MarketProducts from "../../components/marketplace-page/marketplace-page"
+import Profile from "../../components/profilePage/profile"
+import Listings from "../../components/profilePage/listings"
+import PurchaseHistory from "../../components/profilePage/purchaseHistory"
+
+
+
+
+
 import {
   Button,
   Container,
@@ -48,8 +53,8 @@ const { MediaContextProvider, Media } = createMedia({
   const HomepageHeading = ({ mobile }) => (
     <Container text>
       <Header
-        as='h1'
-        content='Marketplace'
+        as='h2'
+        content='Profile'
         inverted
         style={{
           fontSize: mobile ? '2em' : '4em',
@@ -86,10 +91,10 @@ const { MediaContextProvider, Media } = createMedia({
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 250, padding: '1em 0em' }}
+              style={{ minHeight: 150, padding: '0.5em 0em' }}
               vertical
             >
-              <HomepageHeading />
+              {/* <HomepageHeading /> */}
             </Segment>
           </Visibility>
   
@@ -106,7 +111,7 @@ const { MediaContextProvider, Media } = createMedia({
   class MobileContainer extends Component {
     state = { }
   
-    //accordian
+    
     handleClick = (e, titleProps) => {
       const { index } = titleProps
       const { activeIndex } = this.state
@@ -165,8 +170,9 @@ const { MediaContextProvider, Media } = createMedia({
       <div>
         <ResponsiveContainer>
         <Nav/>
-        <Filterbar/>
-          
+        
+        <Profile/>
+        <PurchaseHistory/>
 
         <Footer />
         </ResponsiveContainer>
