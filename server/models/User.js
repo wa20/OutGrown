@@ -43,8 +43,6 @@ const userSchema = new Schema({
     type: String,
     trim: true
   }
-
-
 });
 
 // set up pre-save middleware to create password

@@ -3,21 +3,6 @@ const { User, Product, Category } = require('../models');
 const mongoose = require('mongoose')
 
 db.once('open', async () => {
-
-  await User.deleteMany();
-
-  await User.create({
-    username: 'freddieb12345',
-    email: 'freddiebrewin@live.com',
-    password: 'password12345',
-    // address {
-      street: "29 Fade Street",
-      townCity: "Fadded City",
-      postCode: "FA9 3ED",
-    // },
-    product: product[2]._id
-  });
-
   await Category.deleteMany();
   
   const categories = await Category.insertMany([
@@ -124,6 +109,21 @@ db.once('open', async () => {
       price: 1.99,
     },
   ])
+
+  await User.deleteMany();
+
+    await User.create({
+      username: 'freddieb12345',
+      email: 'freddiebrewin@live.com',
+      password: 'password12345',
+      // address {
+        street: "29 Fade Street",
+        townCity: "Fadded City",
+        postCode: "FA9 3ED",
+      // },
+      product: products[2]._id
+    });
+
   console.log('products seeded');
 
   console.log('users seeded');
