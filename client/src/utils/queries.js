@@ -41,3 +41,17 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
+
+// export const QUERY_USER = gql`
+//   {
+//     user {
+//       firstName
+//       lastName
+//       username
+//       email
+//       street
+//       townCity
+//       postCode
+//     }  
+// `;
+

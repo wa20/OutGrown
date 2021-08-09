@@ -3,6 +3,7 @@ import {
   UPDATE_PRODUCTS,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
+  UPDATE_USER,
 } from "./actions";
 
 export const reducer = (state, action) => {
