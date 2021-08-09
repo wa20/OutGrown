@@ -19,6 +19,32 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+
+  firstName: {
+    type: String,
+    trim: true
+  },
+  lastName: {
+    type: String,
+    trim: true
+  },
+
+  street: {
+    type: String,
+    trim: true
+  },
+
+  townCity: {
+    type: String,
+    trim: true
+  },
+
+  postCode: {
+    type: String,
+    trim: true
+  }
+
+
 });
 
 // set up pre-save middleware to create password
