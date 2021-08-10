@@ -30,7 +30,7 @@ import {
 } from "semantic-ui-react";
 
 
-
+//Set the states, on change update them, on submit run the mutation with the values in state
 
 function Profile(props) {
 

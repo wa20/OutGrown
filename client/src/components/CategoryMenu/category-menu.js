@@ -33,7 +33,7 @@ function CategoryMenu() {
         });
       });
     }
-  }, [categoryData, loading, dispatch]);
+  }, [categoryData, loading]); //Use effects only runs when categoryData, loading and dispatch are true/change
 
   const handleClick = (id) => {
     dispatch({
