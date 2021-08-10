@@ -8,6 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/globalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
+import { Card, Image, Segment } from 'semantic-ui-react';
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -78,9 +79,10 @@ const Cart = () => {
   }
 
   return (
+    <Card>
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+        [x]
       </div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
@@ -109,6 +111,7 @@ const Cart = () => {
         </h3>
       )}
     </div>
+    </Card>
   );
 };
 

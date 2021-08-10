@@ -12,6 +12,7 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
 import MarketplaceCard from '../../components/marketplace-card/marketplace-card';
+import { Container } from 'semantic-ui-react'
   
 const MarketplaceResults = () => {
   const [state, dispatch] = useStoreContext();
@@ -101,7 +102,7 @@ const MarketplaceResults = () => {
           }} 
         />
         {state.products.length ? (
-          <div className="flex-row">
+          <div className="flex-row" style = {{maxWidth:"2000px", paddingLeft:"20%", paddingRight:"20%"}} >
             {filterProducts().map((product) => (
                 <MarketplaceCard
                 key={product._id}
