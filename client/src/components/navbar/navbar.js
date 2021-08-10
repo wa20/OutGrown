@@ -30,6 +30,7 @@ import Menu from '@material-ui/core/Menu';
 import Logo from '../../assets/outgrownLogo.png'
 import Auth from "../../utils/auth";
 import Cart from "../../components/cart/cart"
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -246,12 +247,9 @@ export default function NavBar(props) {
             <ListItemText primary="Sign Up" />
           </ListItemLink>
 
-          <ListItemLink button>
-            <ListItemIcon>
+          <ListItem>
               <Cart />
-            </ListItemIcon>
-            <ListItemText primary="Basket" />
-          </ListItemLink>
+          </ListItem>
       </List>
     </div>
   );
@@ -345,17 +343,14 @@ export default function NavBar(props) {
       <List>
         <ListItemLink button href='/' onClick={() => Auth.logout()}>
             <ListItemIcon>
-              <ArrowForwardIcon />
+              <CancelIcon />
             </ListItemIcon>
             <ListItemText primary="Logout" />
           </ListItemLink>
 
-          <ListItemLink button href='#'>
-            <ListItemIcon>
+          <ListItem>
               <Cart />
-            </ListItemIcon>
-            <ListItemText primary="Basket" />
-          </ListItemLink>
+          </ListItem>
       </List>
     </div>
   );
