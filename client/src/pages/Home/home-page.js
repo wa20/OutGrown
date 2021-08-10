@@ -3,11 +3,10 @@ import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Logo from '../../assets/outgrownLogo.png'
 import HomeContent from "../../components/home-content/home-content"
-import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
-import CarouselBanner from "../../components/banners/carousel-banner"
+
 
 import {
   Button,
@@ -166,7 +165,6 @@ const Home = () => {
     <div>
       <ResponsiveContainer>
         <Nav/>
-        {/* <Hero /> */}
         <Blurb />
         <Grid stackable columns={2} style={{paddingBottom:10, paddingTop:10}}>
           <Grid.Column centered width={8}>
@@ -176,10 +174,7 @@ const Home = () => {
             <CarouselCategories />
           </Grid.Column>
         </Grid>
-        
         <HomeContent/> 
-        {/* <CarouselProd/> */}
-        {/* <CarouselBanner/> */}
         <Footer />
       </ResponsiveContainer>
     </div>

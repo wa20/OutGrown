@@ -3,7 +3,6 @@ import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Logo from '../../assets/outgrownLogo.png'
 import HomeContent from "../../components/home-content/home-content"
-import Hero from "../../components/hero/hero"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import Profile from "../../components/profilePage/profile"
