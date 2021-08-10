@@ -1,10 +1,13 @@
+
+import React, { useEffect, useState } from 'react'
 import { createMedia } from "@artsy/fresnel";
 import PropTypes from "prop-types";
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
-// import { ADD_USER } from '../../utils/mutations';
+import { UPDATE_USER } from '../../utils/mutations';
 import { useQuery } from '@apollo/client'; //
-import { QUERY_PRODUCTS } from '../../utils/queries';
+import { QUERY_USER } from '../../utils/queries';
+import { useStoreContext } from '../../utils/globalState';
 
 import {
   Button,
@@ -30,20 +33,46 @@ import {
 
 
 function Profile(props) {
-    // const [formState, setFormState] = useState({ email: '', password: '', });
-    // const [addUser] = useMutation(ADD_USER);
+
+    const [state, dispatch] = useStoreContext();
+    const { data } = useQuery(QUERY_USER);
+
+    
+  let user;
+
+  if (data) {
+    user = data.user;
+  }
+
+    // const [usernameState, setUsernameState] = useState(state.user.username);
+    // const [firstNameState, setFirstNameState] = useState("");
+    // const [lastNameState, setLastNameState] = useState("");
+    // const [emailState, setEmailState] = useState("");
+    // const [StreetState, setStreetState] = useState("");
+    // const [townCityState, setTownCityState] = useState("");
+    // const [postCodestate, setPostCodeState] = useState("");
+
+
+
+
+
+    // const [updateUser] = useMutation(UPDATE_USER);
   
     // const handleFormSubmit = async (event) => {
     //   event.preventDefault();
-    //   const mutationResponse = await addUser({
+    //   const mutationResponse = await updateUser({
     //     variables: {
-    //       email: formState.email,
-    //       password: formState.password,
-    //       username: formState.username,
+    //       email: emailState.email,
+    //       username: usernameState.username,
+    //       firstName: firstNameState.firstName,
+    //       lastName: lastNameState.lastName,
+    //       street: StreetState.street,
+    //       townCity: townCityState.townCity,
+    //       postCode: postCodestate.postCode
+    
     //     },
     //   });
-    //   const token = mutationResponse.data.addUser.token;
-    //   Auth.login(token);
+      
     // };
   
     // const handleChange = (event) => {
@@ -68,10 +97,13 @@ function Profile(props) {
         render: () => (
           <Tab.Pane attached={false}>
             <Card fluid>
-              <Card.Content header="Hey User" />
+              <Card.Content header="">
+              Hey {user.username}
+              </Card.Content>
+
               <Card.Content>
                 <Card.Meta>Delivery Address</Card.Meta>
-                <Card.Description>address line 1</Card.Description>
+                {/* <Card.Description>address line 1</Card.Description> */}
                 <Card.Description>address line 2</Card.Description>
                 <Card.Description>City/Town</Card.Description>
                 <Card.Description>Post Code</Card.Description>

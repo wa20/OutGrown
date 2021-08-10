@@ -42,16 +42,19 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 
-// export const QUERY_USER = gql`
-//   {
-//     user {
-//       firstName
-//       lastName
-//       username
-//       email
-//       street
-//       townCity
-//       postCode
-//     }  
-// `;
-
+  export const QUERY_USER = gql`
+  query getUser($_id: ID) {
+    
+      user {
+        _id
+        firstName
+        lastName
+        username
+        email
+        street
+        townCity
+        postCode
+       
+    }
+  }
+`;

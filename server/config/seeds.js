@@ -117,6 +117,8 @@ db.once('open', async () => {
       email: 'freddiebrewin@live.com',
       password: 'password12345',
       // address {
+        firstName: "Freddie",
+        lastName: "Jeff",
         street: "29 Fade Street",
         townCity: "Fadded City",
         postCode: "FA9 3ED",

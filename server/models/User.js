@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
@@ -12,7 +12,8 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    match: [/.+@.+\..+/, 'Must be valid email address!'],
   },
   password: {
     type: String,
@@ -42,7 +43,14 @@ const userSchema = new Schema({
   postCode: {
     type: String,
     trim: true
-  }
+  },
+
+  // product: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'Product'
+  //   }
+  // ]
 });
 
 // set up pre-save middleware to create password

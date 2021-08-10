@@ -24,6 +24,8 @@ type User {
     street: String
     townCity: String
     postCode: String
+    firstName: String
+    lastName: String
   }
 
   
@@ -33,7 +35,8 @@ type Auth {
   }
 
   type Query {
-    user: User
+    
+    user(_id: ID!): User
     categories: [Category]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
@@ -41,7 +44,7 @@ type Auth {
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    updateUser(username: String, email: String, password: String): User
+    updateUser(username: String, email: String, password: String, email: String, street: String, townCity: String, postCode: String, firstName: String, lastName:String): User
     login(email: String!, password: String!): Auth
     updateProduct(_id: ID!): Product
   }

@@ -15,7 +15,7 @@ import MarketplaceCard from '../../components/marketplace-card/marketplace-card'
   
 const MarketplaceResults = () => {
   const [state, dispatch] = useStoreContext();
-  const { currentCategory } = state;
+  // const { currentCategory } = state;
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const [searchTerm, setSearchTerm] = useState("");
