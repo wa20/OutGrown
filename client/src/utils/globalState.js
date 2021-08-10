@@ -9,6 +9,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     products: [],
     categories: [],
     // currentCategory: '',
+    // username: "",
 
 
   });
