@@ -8,7 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/globalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
-import { Card, Image, Segment } from 'semantic-ui-react';
+import { Card, Button, Header, Divider } from 'semantic-ui-react';
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -80,37 +80,36 @@ const Cart = () => {
 
   return (
     <Card>
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [x]
-      </div>
-      <h2>Shopping Cart</h2>
-      {state.cart.length ? (
-        <div>
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
-
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
-
-            {/* Check to see if the user is logged in. If so render a button to check out */}
-            {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
-            ) : (
-              <span>(log in to check out)</span>
-            )}
-          </div>
+      <div className="cart">
+        <div className="close" onClick={toggleCart}>
+          [x]
         </div>
-      ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
-        </h3>
-      )}
-    </div>
+        <Header as='h1'>Shopping Cart</Header>
+        <Divider />
+        {state.cart.length ? (
+          <div >
+            {state.cart.map((item) => (
+              <CartItem key={item._id} item={item} />
+            ))}
+
+            <div className="flex-row space-between" >
+              <strong>Total: ${calculateTotal()}</strong>
+
+              {/* Check to see if the user is logged in. If so render a button to check out */}
+              {Auth.loggedIn() ? (
+                <Button positive onClick={submitCheckout}>Checkout</Button>
+                
+              ) : (
+                <span>(log in to check out)</span>
+              )}
+            </div>
+          </div>
+        ) : (
+          <h3>
+            You haven't added anything to your cart yet!
+          </h3>
+        )}
+      </div>
     </Card>
   );
 };
