@@ -29,6 +29,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Menu from '@material-ui/core/Menu';
 import Logo from '../../assets/outgrownLogo.png'
 import Auth from "../../utils/auth";
+import Cart from "../../components/cart/cart"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -129,8 +130,6 @@ export default function NavBar(props) {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      /* onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)} */
     >
       <List>
         <ListItemLink button href="/">
@@ -230,8 +229,6 @@ export default function NavBar(props) {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <ListItemLink button href='/login'>
@@ -249,9 +246,9 @@ export default function NavBar(props) {
             <ListItemText primary="Sign Up" />
           </ListItemLink>
 
-          <ListItemLink button href='#'>
+          <ListItemLink button>
             <ListItemIcon>
-              <ShoppingBasketIcon />
+              <Cart />
             </ListItemIcon>
             <ListItemText primary="Basket" />
           </ListItemLink>
@@ -337,6 +334,31 @@ export default function NavBar(props) {
       </List>
     </div>
   );
+  /* Menu on right logged In */
+  const list4 = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+    >
+      <List>
+        <ListItemLink button href='/' onClick={() => Auth.logout()}>
+            <ListItemIcon>
+              <ArrowForwardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Logout" />
+          </ListItemLink>
+
+          <ListItemLink button href='#'>
+            <ListItemIcon>
+              <Cart />
+            </ListItemIcon>
+            <ListItemText primary="Basket" />
+          </ListItemLink>
+      </List>
+    </div>
+  );
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -381,6 +403,7 @@ export default function NavBar(props) {
                   </Menu>
                   
                   <div className={classes.grow} />
+                  <Cart/>
                   <Button color="inherit" href="/" onClick={() => Auth.logout()}>Logout</Button>
                 </Toolbar>
               </AppBar>
@@ -425,7 +448,7 @@ export default function NavBar(props) {
                           onClose={toggleDrawer('right', false)}
                           onOpen={toggleDrawer('right', true)}
                         >
-                          {list2('right')}
+                          {list4('right')}
                         </SwipeableDrawer>
                         
                         
@@ -467,9 +490,15 @@ export default function NavBar(props) {
                     </Menu>
                     
                     <div className={classes.grow} />
+                    
                     <Button color="inherit" href="/login">Login</Button>
                     <Button color="inherit" href="/signup">Sign up</Button>
+                    <Button color="inherit" >
+                      <Cart />
+                    </Button>
+                    
                   </Toolbar>
+                  
                 </AppBar>
                 </div>
                 <div className={classes.sectionMobile}>
