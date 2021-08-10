@@ -69,10 +69,11 @@ const MarketplaceResults = () => {
   return (
       <div> 
         <Input
+          centered
           fluid
           icon='search'
           iconPosition='left'
-          style = {{margin:'2ex',padding:'1ex'}}
+          style = {{marginLeft:'20%', marginRight:'20%', marginBottom:'1%', padding:'1ex', maxWidth:'1200px'}}
            action={
             <select  
               onChange={(event) => {

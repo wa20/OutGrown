@@ -14,6 +14,7 @@ import LoginForm from './pages/login/login';
 import SignupForm from './pages/signup/signup';
 import Marketplace from './pages/marketplace/marketplace';
 import ProfilePage from './pages/profilePage/profilePage';
+import Detail from './pages/Detail/Detail';
 
 import { StoreProvider } from './utils/globalState';
 
@@ -51,7 +52,7 @@ function App() {
                 <Route exact path="/marketplace" component={Marketplace}/>
                 <Route exact path="/login" component={LoginForm} />
                 <Route exact path="/Profile" component={ProfilePage} />
-                {/* <Route exact path="/login" component={LoginForm} /> */}
+                <Route exact path="/products/:id" component={Detail} />
                 <Route exact path="/signup" component={SignupForm} />
               </Switch>
           </div>

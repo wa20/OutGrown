@@ -53,7 +53,10 @@ function MarketplaceCard(item) {
     <Card centered style={{ height: '55ex' }}>
       <Card.Content  >
         <Segment>
-          <Image style={{ height: '25ex' }} src={`/images/${image}`} ui={false} />
+          <Link to={`/products/${_id}`}>
+            <Image style={{ height: '25ex' }} src={`/images/${image}`} ui={false} />
+          </Link>
+          
         </Segment>
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
