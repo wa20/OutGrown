@@ -31,25 +31,16 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $username: String!
-    $street: String!
-    $townCity: String!
-    $postCode: String!
-
-  ) {
-    updateUser(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-      username: $username
-      street: $street
-      townCity: $townCity
-      postCode: $postCode
-    ) 
+  mutation updateUser($userInfo: InputUpdate!) {
+    updateUser(userInfo: $userInfo) {
+      _id
+      firstName
+      lastName
+      email
+      username
+      street
+      townCity
+      postCode
+    }
   }
 `;

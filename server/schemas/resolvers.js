@@ -88,9 +88,13 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
+      console.log(context)
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
+        console.log(args)
+        const response = await User.findByIdAndUpdate(context.user._id, args, { new: true });
+        console.log(response)
+        return response
+       } 
 
       throw new AuthenticationError('Not logged in');
     },

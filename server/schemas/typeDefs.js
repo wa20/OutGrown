@@ -25,7 +25,7 @@ const typeDefs = gql`
 
   type User {
     _id: ID
-    userame: String
+    username: String
     email: String
     street: String
     townCity: String
@@ -43,6 +43,17 @@ const typeDefs = gql`
     user: User
   }
 
+  input InputUpdate {
+    username: String!
+    email: String!
+    password: String!
+    street: String!
+    townCity: String!
+    postCode: String!
+    firstName: String!
+    lastName:String!
+  }
+
   type Query {
     
     user(_id: ID!): User
@@ -54,7 +65,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    updateUser(username: String, email: String, password: String, email: String, street: String, townCity: String, postCode: String, firstName: String, lastName:String): User
+    updateUser(userInfo: InputUpdate!): User
     login(email: String!, password: String!): Auth
     updateProduct(_id: ID!): Product
   }

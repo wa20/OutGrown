@@ -43,20 +43,18 @@ export const QUERY_CATEGORIES = gql`
 
 
   export const QUERY_USER = gql`
-  query getUser($_id: ID) {
-    
-      user {
-        _id
-        firstName
-        lastName
-        username
-        email
-        street
-        townCity
-        postCode
-       
-    }
+  query getUser($_id: ID!) {
+    user (_id: $_id){
+      _id
+      firstName
+      lastName
+      username
+      email
+      street
+      townCity
+      postCode
   }
+}
 `;
 
 export const QUERY_CHECKOUT = gql`
