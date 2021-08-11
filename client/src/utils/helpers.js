@@ -22,7 +22,7 @@ export function pluralize(name, count) {
   
       request.onsuccess = function(e) {
         db = request.result;
-        tx = db.transaction(storeName, 'readwrite');
+        // tx = db.transaction(storeName, 'readwrite');
         store = tx.objectStore(storeName);
   
         db.onerror = function(e) {
