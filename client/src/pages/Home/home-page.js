@@ -6,6 +6,7 @@ import HomeContent from "../../components/home-content/home-content"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
+import Cart from '../../components/cart/cart'
 
 
 import {
@@ -56,7 +57,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Button inverted color="red" size='huge'>
-      
+
       <Icon name='shopping bag' /> Shop Now
     </Button>
   </Container>
@@ -104,7 +105,7 @@ DesktopContainer.propTypes = {
 }
 
 class MobileContainer extends Component {
-  state = { }
+  state = {}
 
   //accordian
   handleClick = (e, titleProps) => {
@@ -126,18 +127,18 @@ class MobileContainer extends Component {
     return (
       <Media as={Sidebar.Pushable} at="mobile">
 
-            <Segment
-              inverted
-              textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
-              vertical
-            >
-              <HomepageHeading mobile />
-            </Segment>
+        <Segment
+          inverted
+          textAlign="center"
+          style={{ minHeight: 350, padding: "1em 0em" }}
+          vertical
+        >
+          <HomepageHeading mobile />
+        </Segment>
 
-            {children}
+        {children}
 
-        
+
       </Media>
     );
   }
@@ -148,7 +149,7 @@ MobileContainer.propTypes = {
 }
 
 const ResponsiveContainer = ({ children }) => (
-  
+
   <MediaContextProvider>
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
@@ -164,9 +165,9 @@ const Home = () => {
   return (
     <div>
       <ResponsiveContainer>
-        <Nav/>
+        <Nav />
         <Blurb />
-        <Grid stackable columns={2} style={{paddingBottom:10, paddingTop:10}}>
+        <Grid stackable columns={2} style={{ paddingBottom: 10, paddingTop: 10 }}>
           <Grid.Column centered width={8}>
             <CarouselFavorites />
           </Grid.Column>
@@ -174,7 +175,7 @@ const Home = () => {
             <CarouselCategories />
           </Grid.Column>
         </Grid>
-        <HomeContent/> 
+        <HomeContent />
         <Footer />
       </ResponsiveContainer>
     </div>
