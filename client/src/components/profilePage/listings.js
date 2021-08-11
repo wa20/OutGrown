@@ -30,7 +30,12 @@ const Listings = () => (
 
     <Segment style={{ padding: '5em 0em' }} vertical textAlign="center">
 
-
+    <Button animated>
+      <Button.Content visible>ADD NEW LISTING</Button.Content>
+      <Button.Content href="/list-item" hidden>
+        <Icon name='arrow right' />
+      </Button.Content>
+    </Button>
             
     </Segment>
     
