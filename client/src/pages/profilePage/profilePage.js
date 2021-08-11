@@ -172,6 +172,7 @@ const { MediaContextProvider, Media } = createMedia({
         
         <Profile/>
         <PurchaseHistory/>
+        <Listings/>
 
         <Footer />
         </ResponsiveContainer>
