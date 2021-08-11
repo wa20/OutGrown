@@ -398,8 +398,10 @@ export default function NavBar(props) {
                   </Menu>
                   
                   <div className={classes.grow} />
-                  <Cart/>
                   <Button color="inherit" href="/" onClick={() => Auth.logout()}>Logout</Button>
+                  <Button color="inherit" >
+                    <Cart />
+                  </Button>
                 </Toolbar>
               </AppBar>
               </div>
