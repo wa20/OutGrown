@@ -30,7 +30,7 @@ import {
 } from "semantic-ui-react";
 
 
-//Set the states, on change update them, on submit run the mutation with the values in state
+
 
 function Profile(props) {
 
@@ -97,9 +97,7 @@ function Profile(props) {
         render: () => (
           <Tab.Pane attached={false}>
             <Card fluid>
-              <Card.Content header="">
-              Hey {user.username}
-              </Card.Content>
+              <Card.Content header="">Hey</Card.Content>
 
               <Card.Content>
                 <Card.Meta>Delivery Address</Card.Meta>
@@ -121,16 +119,26 @@ function Profile(props) {
       {
         menuItem: "Edit Profile",
         render: () => (
-          <Tab.Pane attached={false}>
-            <Segment inverted>
+          <Tab.Pane attached={false} >
+            <Segment inverted >
+            <Grid.Row centered>
               <Form inverted>
-                <Form.Group widths="equal">
-                  <Form.Input fluid label="User Name" placeholder="First name"/>
-                  <Form.Input fluid label="Last name" placeholder="Last name" />
+                <Form.Group unstackable widths={2}>
+                  <Form.Input label="First name" placeholder="First name" />
+                  <Form.Input label="Last name" placeholder="Last name" />
                 </Form.Group>
-                
+                <Form.Group widths={2}>
+                  <Form.Input label="Street" placeholder="" />
+                  <Form.Input label="City/Town" placeholder="" />
+                  <Form.Input label="Post Code" placeholder="" />
+                </Form.Group>
+                <Form.Group widths={2}>
+                <Form.Input label="Username" placeholder="" />
+                <Form.Input label="Email" placeholder="" />
+                </Form.Group>
                 <Button type="submit">Submit</Button>
               </Form>
+              </Grid.Row>
             </Segment>
           </Tab.Pane>
         ),
