@@ -46,7 +46,7 @@ const typeDefs = gql`
   input InputUpdate {
     username: String!
     email: String!
-    password: String!
+    password: String
     street: String!
     townCity: String!
     postCode: String!
