@@ -40,56 +40,53 @@ function Profile({ _id }) {
   });
 
   console.log(userId);
-  console.log("Data", data);
+
   let user;
   if (data) {
     user = data.user;
 
   }
 
-  const [usernameState, setUsernameState] = useState("");
-  const [firstNameState, setFirstNameState] = useState("");
-  const [lastNameState, setLastNameState] = useState("");
-  const [emailState, setEmailState] = useState("");
-  const [StreetState, setStreetState] = useState("");
-  const [townCityState, setTownCityState] = useState("");
-  const [postCodestate, setPostCodeState] = useState("");
+  const [username, setUsername] = useState(null);
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [street, setStreet] = useState(null);
+  const [townCity, setTownCity] = useState(null);
+  const [postCode, setPostCode] = useState(null);
 
   const handleUsernameChange = (event) => {
-    setUsernameState(event.target.value);
-    console.log(usernameState)
+    setUsername(event.target.value);
   };
 
   const handleFirstNameChange = (event) => {
-    setFirstNameState(event.target.value);
-    console.log(firstNameState)
+    setFirstName(event.target.value);
   };
 
   const handleLastNameChange = (event) => {
-    setLastNameState(event.target.value);
-    console.log(lastNameState)
+    setLastName(event.target.value);
   };
 
   const handleEmailChange = (event) => {
-    setEmailState(event.target.value);
-    console.log(emailState)
+    setEmail(event.target.value);
   };
 
   const handleStreetChange = (event) => {
-    setStreetState(event.target.value);
-    console.log(StreetState)
-
+    setStreet(event.target.value);
   };
 
   const handleTownCityChange = (event) => {
-    setTownCityState(event.target.value);
-    console.log(townCityState)
+    setTownCity(event.target.value);
   };
 
   const handlePostCodeChange = (event) => {
-    setPostCodeState(event.target.value);
-    console.log(postCodestate)
+    setPostCode(event.target.value);
   };
+  const userInfo = {
+    email, username, firstName, lastName, street, townCity, postCode
+  }
+
+  console.log(userInfo)
 
   const [updateUser, { error }] = useMutation(UPDATE_USER);
   console.log(error);
@@ -98,15 +95,7 @@ function Profile({ _id }) {
     try {
       const { data } = await updateUser({
         variables: {
-          userInfo: {
-            email: emailState.email,
-            username: usernameState.username,
-            firstName: firstNameState.firstName,
-            lastName: lastNameState.lastName,
-            street: StreetState.street,
-            townCity: townCityState.townCity,
-            postCode: postCodestate.postCode
-          }
+          userInfo
         },
       });
       localStorage.setItem("log", JSON.stringify(data))

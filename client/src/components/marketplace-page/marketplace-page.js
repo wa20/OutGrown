@@ -42,10 +42,7 @@ const MarketplaceResults = () => {
 
 
   function filterProducts() {
-    console.log(searchTerm)
-    console.log(filterChoice)
     if (!searchTerm) {
-      console.log(state.products)
       return state.products;
     }
     if (filterChoice === 'name') {

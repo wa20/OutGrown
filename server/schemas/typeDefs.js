@@ -46,14 +46,14 @@ const typeDefs = gql`
   }
 
   input InputUpdate {
-    username: String
-    email: String
+    username: String!
+    email: String!
     password: String
-    street: String
-    townCity: String
-    postCode: String
-    firstName: String
-    lastName: String
+    street: String!
+    townCity: String!
+    postCode: String!
+    firstName: String!
+    lastName:String!
   }
 
   type Query {
