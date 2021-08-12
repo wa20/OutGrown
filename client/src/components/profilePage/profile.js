@@ -116,6 +116,7 @@ function Profile({ _id }) {
     }
   };
 
+  
   const panes = [
     {
       menuItem: "Profile",
@@ -123,7 +124,9 @@ function Profile({ _id }) {
         <Tab.Pane attached={false}>
           <Card fluid>
             <Card.Content header="">
-              Hey {user.username}
+              Hey 
+              {/* {user.username ? user.username : 'first name'}  */}
+             
             </Card.Content>
 
             <Card.Content>
@@ -141,11 +144,11 @@ function Profile({ _id }) {
             </Card.Content>
             <Card.Content extra>
               <Icon name="user" /> 
-              {user.username}
+              {/* {user.username} */}
             </Card.Content>
             <Card.Content extra>
               <Icon name="mail" /> 
-              {user.email}
+              {/* {user.email ? user.email : 'email'} */}
             </Card.Content>
           </Card>
         </Tab.Pane>
@@ -176,7 +179,7 @@ function Profile({ _id }) {
                   </Form.Group>
 
                 {/* </Form.Group> */}
-                <Button type="submit" onClick={() => window.location.reload(true)}>Submit</Button>
+                <Button type="submit">Submit</Button>
               </Form>
             </Grid.Row>
           </Segment>
