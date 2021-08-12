@@ -123,21 +123,29 @@ function Profile({ _id }) {
         <Tab.Pane attached={false}>
           <Card fluid>
             <Card.Content header="">
-              Hey {user.firstName}
+              Hey {user.username}
             </Card.Content>
 
             <Card.Content>
               <Card.Meta>Delivery Address</Card.Meta>
               {/* <Card.Description>address line 1</Card.Description> */}
-              <Card.Description>{user.street}</Card.Description>
-              <Card.Description>{user.townCity}</Card.Description>
-              <Card.Description>{user.postCode}</Card.Description>
+              <Card.Description>
+                {/* {user.street} */}
+                </Card.Description>
+              <Card.Description>
+                {/* {user.townCity} */}
+                </Card.Description>
+              <Card.Description>
+                {/* {user.postCode} */}
+                </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Icon name="user" /> {user.username}
+              <Icon name="user" /> 
+              {user.username}
             </Card.Content>
             <Card.Content extra>
-              <Icon name="mail" /> {user.email}
+              <Icon name="mail" /> 
+              {user.email}
             </Card.Content>
           </Card>
         </Tab.Pane>
@@ -168,7 +176,7 @@ function Profile({ _id }) {
                   </Form.Group>
 
                 {/* </Form.Group> */}
-                <Button type="submit" >Submit</Button>
+                <Button type="submit" onClick={() => window.location.reload(true)}>Submit</Button>
               </Form>
             </Grid.Row>
           </Segment>
