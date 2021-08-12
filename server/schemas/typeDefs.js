@@ -15,6 +15,7 @@ const typeDefs = gql`
     image: String
     price: Float
     category: Category
+    quantity: Int
   }  
 
   type Order {
@@ -33,6 +34,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
   }
+  
 
   type Checkout {
     session: ID
@@ -60,6 +62,7 @@ const typeDefs = gql`
     categories: [Category]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
+    order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
   }
 
@@ -68,6 +71,7 @@ const typeDefs = gql`
     updateUser(userInfo: InputUpdate!): User
     login(email: String!, password: String!): Auth
     updateProduct(_id: ID!): Product
+    addOrder(products: [ID]!): Order
   }
 `;
 

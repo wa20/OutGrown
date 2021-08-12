@@ -14,10 +14,11 @@ import {
     Sidebar,
     Visibility,
   } from "semantic-ui-react";
+  import "./blurb.css"
 
 const Blurb = () => (
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
+    <Segment style={{ padding: '5em 0em'}} vertical className="DPP">
+      <Grid container stackable verticalAlign='middle' >
           <Grid.Column textAlign="center" width={16}>
             <Header textAlign='center' as='h3'  style={{ fontSize: '2em' }}>
               OutGrown
