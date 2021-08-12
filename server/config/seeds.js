@@ -4,27 +4,27 @@ const mongoose = require('mongoose')
 
 db.once('open', async () => {
   await Category.deleteMany();
-  
+
   const categories = await Category.insertMany([
-    { 
+    {
       name: 'Toys',
       image: 'toys-category.jpg',
-      description:'Search our large collection of fun, playful toys to keep your babies entertained',
+      description: 'Search our large collection of fun, playful toys to keep your babies entertained',
     },
-    { 
+    {
       name: 'Clothes',
       image: 'clothes-category.jpg',
-      description:'Our clothes section contains a large variety of different items, including bodysuits, shoes, socks and more',
+      description: 'Our clothes section contains a large variety of different items, including bodysuits, shoes, socks and more',
     },
-    { 
+    {
       name: 'Travel',
       image: 'pram.jpg',
-      description:'Make sure your child stays comfy when you travel in our spacious and luxiourious strollers and prams',
+      description: 'Make sure your child stays comfy when you travel in our spacious and luxiourious strollers and prams',
     },
-    { 
+    {
       name: 'Nursery',
       image: 'nursery-category.jpg',
-      description:'Buy all the nursery essentials including cribs, mattreses, baby monitors and more',
+      description: 'Buy all the nursery essentials including cribs, mattreses, baby monitors and more',
     },
   ]);
 
@@ -38,7 +38,7 @@ db.once('open', async () => {
   const products = await Product.insertMany([
     {
       //genereated ID manually 
-      _id: paramId, 
+      _id: paramId,
       name: 'Pram',
       description:
         'Slightly used pram',
@@ -112,19 +112,32 @@ db.once('open', async () => {
 
   await User.deleteMany();
 
-    await User.create({
-      username: 'freddieb12345',
-      email: 'freddiebrewin@live.com',
-      password: 'password12345',
-      // address {
-        firstName: "Freddie",
-        lastName: "Jeff",
-        street: "29 Fade Street",
-        townCity: "Fadded City",
-        postCode: "FA9 3ED",
-      // },
-      product: products[2]._id
-    });
+  await User.create({
+    username: 'freddieb12345',
+    email: 'freddiebrewin@live.com',
+    password: 'password12345',
+    // address {
+    firstName: "Freddie",
+    lastName: "Jeff",
+    street: "29 Fade Street",
+    townCity: "Fadded City",
+    postCode: "FA9 3ED",
+    // },
+    product: products[2]._id
+  });
+
+  await User.create({
+    username: 'Jack',
+    firstName: 'Jack',
+    lastName: 'Jones',
+    email: 'jack@gmail.com',
+    password: 'password12345',
+    orders: [
+      {
+        products: [products[0]._id, products[0]._id, products[1]._id]
+      }
+    ]
+  });
 
   console.log('products seeded');
 
