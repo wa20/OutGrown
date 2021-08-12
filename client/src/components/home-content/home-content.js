@@ -23,7 +23,7 @@ import "./home-content.css"
 const HomeContent = () => (
     <div>
 
-<Segment style={{ padding: '0em' }} vertical>
+<Segment style={{ paddingTop: '1em', paddingBottom: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>

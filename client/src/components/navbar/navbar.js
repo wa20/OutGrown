@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Collapse from '@material-ui/core/Collapse';
 import HomeIcon from '@material-ui/icons/Home';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import clsx from 'clsx';
 import StoreIcon from '@material-ui/icons/Store';
 import CategoryIcon from '@material-ui/icons/Category';
@@ -154,6 +155,13 @@ export default function NavBar(props) {
           <ListItemText primary="Categories" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+
+        <ListItemLink button href="/profile">
+          <ListItemIcon>
+            <AccountCircleIcon />
+          </ListItemIcon>
+          <ListItemText primary="profile" />
+        </ListItemLink>
 
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List  
@@ -386,6 +394,7 @@ export default function NavBar(props) {
                   <Button onClick={handleClick}>
                     Categories
                   </Button>
+                  <Button color="inherit" href='/profile'>Profile</Button>
 
                   <Menu
                     id="simple-menu"
@@ -475,6 +484,7 @@ export default function NavBar(props) {
                     <Button onClick={handleClick}>
                       Categories
                     </Button>
+                    <Button color="inherit" href='/profile'>Profile</Button>
 
                     <Menu
                       id="simple-menu"

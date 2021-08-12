@@ -87,11 +87,25 @@ const resolvers = {
       return { token, user };
     },
 
+    addOrder: async (parent, { products }, context) => {
+      console.log(context);
+      if (context.user) {
+        const order = new Order({ products });
+
+        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+
+        return order;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+
     updateUser: async (parent, args, context) => {
       if (context.user) {
         const res = await User.findByIdAndUpdate(context.user._id, args.userInfo, { new: true });
         return res
        } 
+
 
       throw new AuthenticationError('Not logged in');
     },

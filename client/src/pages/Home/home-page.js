@@ -7,6 +7,7 @@ import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
 import Cart from '../../components/cart/cart'
+import "../../index.css"
 
 
 import {
@@ -167,7 +168,7 @@ const Home = () => {
       <ResponsiveContainer>
         <Nav />
         <Blurb />
-        <Grid stackable columns={2} style={{ paddingBottom: 10, paddingTop: 10 }}>
+        <Grid stackable columns={2} style={{ padding: '3em 0em' }} vertical className="DPP">
           <Grid.Column centered width={8}>
             <CarouselFavorites />
           </Grid.Column>
