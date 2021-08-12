@@ -34,6 +34,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
   }
+  
 
   type Checkout {
     session: ID
@@ -45,14 +46,14 @@ const typeDefs = gql`
   }
 
   input InputUpdate {
-    username: String!
-    email: String!
-    password: String!
-    street: String!
-    townCity: String!
-    postCode: String!
-    firstName: String!
-    lastName:String!
+    username: String
+    email: String
+    password: String
+    street: String
+    townCity: String
+    postCode: String
+    firstName: String
+    lastName: String
   }
 
   type Query {

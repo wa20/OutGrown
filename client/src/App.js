@@ -49,6 +49,7 @@ function App() {
       <StoreProvider>
         <Router>
           <div>
+
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/marketplace" component={Marketplace} />
@@ -59,6 +60,7 @@ function App() {
               <Route exact path="/signup" component={SignupForm} />
               <Route exact path="/success" component={Success} />
             </Switch>
+
           </div>
         </Router>
       </StoreProvider>

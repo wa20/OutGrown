@@ -116,6 +116,7 @@ function Profile({ _id }) {
     }
   };
 
+  
   const panes = [
     {
       menuItem: "Profile",
@@ -123,21 +124,31 @@ function Profile({ _id }) {
         <Tab.Pane attached={false}>
           <Card fluid>
             <Card.Content header="">
-              Hey
+              Hey 
+              {/* {user.username ? user.username : 'first name'}  */}
+             
             </Card.Content>
 
             <Card.Content>
               <Card.Meta>Delivery Address</Card.Meta>
               {/* <Card.Description>address line 1</Card.Description> */}
-              <Card.Description>address line 2</Card.Description>
-              <Card.Description>City/Town</Card.Description>
-              <Card.Description>Post Code</Card.Description>
+              <Card.Description>
+                {/* {user.street} */}
+                </Card.Description>
+              <Card.Description>
+                {/* {user.townCity} */}
+                </Card.Description>
+              <Card.Description>
+                {/* {user.postCode} */}
+                </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Icon name="user" /> Username
+              <Icon name="user" /> 
+              {/* {user.username} */}
             </Card.Content>
             <Card.Content extra>
-              <Icon name="mail" /> Email
+              <Icon name="mail" /> 
+              {/* {user.email ? user.email : 'email'} */}
             </Card.Content>
           </Card>
         </Tab.Pane>
@@ -150,16 +161,25 @@ function Profile({ _id }) {
           <Segment inverted>
             <Grid.Row centered>
               <Form inverted onSubmit={handleFormSubmit}>
-                <Form.Group widths="equal">
-                  <Form.Input fluid label="User Name" placeholder="First name" onChange={handleUsernameChange} />
+                {/* <Form.Group widths="equal"> */}
+                <Form.Group unstackable widths={2}>
+                <Form.Input fluid label="First Name" placeholder="First name" onChange={handleFirstNameChange} />
                   <Form.Input fluid label="Last name" placeholder="Last name" onChange={handleLastNameChange} />
-                  <Form.Input fluid label="First Name" placeholder="First name" onChange={handleFirstNameChange} />
+                  </Form.Group>
+
+                  <Form.Group widths={2}>
+                  <Form.Input fluid label="postcode" placeholder="postcode" onChange={handlePostCodeChange} />
                   <Form.Input fluid label="Street" placeholder="Street" onChange={handleStreetChange} />
                   <Form.Input fluid label="town city" placeholder="town city" onChange={handleTownCityChange} />
-                  <Form.Input fluid label="postcode" placeholder="postcode" onChange={handlePostCodeChange} />
+                  </Form.Group>
+
+                  <Form.Group widths={2}>
+                  <Form.Input fluid label="User Name" placeholder="First name" onChange={handleUsernameChange} />
                   <Form.Input fluid label="email" placeholder="email" onChange={handleEmailChange} />
-                </Form.Group>
-                <Button type="submit" >Submit</Button>
+                  </Form.Group>
+
+                {/* </Form.Group> */}
+                <Button type="submit">Submit</Button>
               </Form>
             </Grid.Row>
           </Segment>
