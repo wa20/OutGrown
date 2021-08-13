@@ -282,7 +282,7 @@ db.once('open', async () => {
 
   await User.create({
     username: 'freddieb12345',
-    email: 'freddiebrewin@live.com',
+    email: 'freddie@test.com',
     password: 'password12345',
     // address {
     firstName: "Freddie",
