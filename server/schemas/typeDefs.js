@@ -33,6 +33,7 @@ const typeDefs = gql`
     postCode: String
     firstName: String
     lastName: String
+    orders: [Order]
   }
   
 

@@ -16,8 +16,8 @@ import Marketplace from './pages/marketplace/marketplace';
 import ProfilePage from './pages/profilePage/profilePage';
 import ListingPage from './pages/listingPage/listingPage';
 import Detail from './pages/Detail/Detail';
-
 import Success from './pages/success/Success'
+import OrderHistory from './pages/orderHistory/orderHistory'
 
 import { StoreProvider } from './utils/globalState';
 
@@ -56,6 +56,7 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/signup" component={SignupForm} />
               <Route exact path="/success" component={Success} />
+              <Route exact path="/orderHistory" component={OrderHistory} />
             </Switch>
 
           </div>

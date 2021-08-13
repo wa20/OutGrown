@@ -42,9 +42,10 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 
-  export const QUERY_USER = gql`
+export const QUERY_USER = gql`
   query getUser($_id: ID!) {
-    user (_id: $_id){
+    
+    user(_id: $_id) {
       _id
       firstName
       lastName
@@ -53,6 +54,19 @@ export const QUERY_CATEGORIES = gql`
       street
       townCity
       postCode
+      orders {
+        _id
+        purchaseDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+        }
+      }
+     
   }
 }
 `;
