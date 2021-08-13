@@ -1,46 +1,31 @@
-import { createMedia } from "@artsy/fresnel";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import "./profilePage.css"
 
 // import Button from '@material-ui/core/Button';
 
 import {
   Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
-  Visibility,
-  Accordion,
-  Form,
-  Table
 } from "semantic-ui-react";
 
 
-
 const Listings = () => (
-    <div>
+  <div>
 
     <Segment style={{ padding: '5em 0em' }} vertical textAlign="center">
 
-    <Button animated>
-      <Button.Content visible>ADD NEW LISTING</Button.Content>
-      <Button.Content href="/list-item" hidden>
-        <Icon name='arrow right' />
-      </Button.Content>
-    </Button>
-            
-    </Segment>
-    
+      <Button animated>
+        <Button.Content visible>ADD NEW LISTING</Button.Content>
+        <Button.Content href="/list-item" hidden>
+          <Icon name='arrow right' />
+        </Button.Content>
+      </Button>
 
-    </div>
+    </Segment>
+
+
+  </div>
 
 )
 
@@ -70,8 +55,8 @@ export default Listings
 //   {
 //     menuItem: "Edit Profile",
 //     render: () => <Tab.Pane >
-    
-                     
+
+
 //     </Tab.Pane>,
 //   },
 // ];

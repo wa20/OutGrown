@@ -1,34 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { createMedia } from "@artsy/fresnel";
-import PropTypes from "prop-types";
+import React, { useState } from 'react'
 import { useMutation } from '@apollo/client';
-import Auth from '../../utils/auth';
 import { UPDATE_USER } from '../../utils/mutations';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../../utils/queries';
 import { useStoreContext } from '../../utils/globalState';
-
 import {
   Button,
   Card,
-  Container,
-  Divider,
   Grid,
-  Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
-  Visibility,
-  Accordion,
   Form,
-  Table,
   Tab
 } from "semantic-ui-react";
 import auth from '../../utils/auth';
-
 
 //Set the states, on change update them, on submit run the mutation with the values in state
 
@@ -39,12 +24,12 @@ function Profile({ _id }) {
     variables: { _id: userId },
   });
 
-  
+
 
   let user;
   if (data) {
     user = data.user;
-    
+
   }
 
   const [username, setUsername] = useState(null);

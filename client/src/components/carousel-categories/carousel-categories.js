@@ -9,7 +9,7 @@ import {
   } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, Divider, Header } from 'semantic-ui-react'
+import { Card, Header } from 'semantic-ui-react'
 
 import "./carousel.css"
 
