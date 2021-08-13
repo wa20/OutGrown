@@ -39,12 +39,12 @@ function Profile({ _id }) {
     variables: { _id: userId },
   });
 
-  console.log(userId);
+  
 
   let user;
   if (data) {
     user = data.user;
-
+    
   }
 
   const [username, setUsername] = useState(null);
@@ -86,10 +86,10 @@ function Profile({ _id }) {
     email, username, firstName, lastName, street, townCity, postCode
   }
 
-  console.log(userInfo)
+
 
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-  console.log(error);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -105,7 +105,7 @@ function Profile({ _id }) {
     }
   };
 
-  
+
   const panes = [
     {
       menuItem: "Profile",
@@ -113,30 +113,28 @@ function Profile({ _id }) {
         <Tab.Pane attached={false}>
           <Card fluid>
             <Card.Content header="">
-              Hey 
-              {user.username ? user.username : 'There'} 
-             
+              Hello {data.user.firstName ? user.firstName : 'There'} {data.user.lastName ? user.lastName : 'There'}
             </Card.Content>
 
             <Card.Content>
               <Card.Meta>Delivery Address</Card.Meta>
-              {/* <Card.Description>address line 1</Card.Description> */}
+              <Card.Description>address line 1</Card.Description>
               <Card.Description>
                 {user.street ? user.street : "Street Address"}
-                </Card.Description>
+              </Card.Description>
               <Card.Description>
                 {user.townCity ? user.townCity : "Town or City"}
-                </Card.Description>
+              </Card.Description>
               <Card.Description>
                 {user.postCode ? user.postCode : "Post Code"}
-                </Card.Description>
+              </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Icon name="user" /> 
+              <Icon name="user" />
               {user.username ? user.email : "Username"}
             </Card.Content>
             <Card.Content extra>
-              <Icon name="mail" /> 
+              <Icon name="mail" />
               {user.email ? user.email : 'Email'}
             </Card.Content>
           </Card>
@@ -150,24 +148,22 @@ function Profile({ _id }) {
           <Segment inverted>
             <Grid.Row centered>
               <Form inverted onSubmit={handleFormSubmit}>
-                {/* <Form.Group widths="equal"> */}
                 <Form.Group unstackable widths={2}>
-                <Form.Input fluid label="First Name" placeholder="First name" onChange={handleFirstNameChange} />
+                  <Form.Input fluid label="First Name" placeholder="First name" onChange={handleFirstNameChange} />
                   <Form.Input fluid label="Last name" placeholder="Last name" onChange={handleLastNameChange} />
-                  </Form.Group>
+                </Form.Group>
 
-                  <Form.Group widths={2}>
+                <Form.Group widths={2}>
                   <Form.Input fluid label="postcode" placeholder="postcode" onChange={handlePostCodeChange} />
                   <Form.Input fluid label="Street" placeholder="Street Address" onChange={handleStreetChange} />
                   <Form.Input fluid label="town city" placeholder="Town or City" onChange={handleTownCityChange} />
-                  </Form.Group>
+                </Form.Group>
 
-                  <Form.Group widths={2}>
+                <Form.Group widths={2}>
                   <Form.Input fluid label="User Name" placeholder="Username" onChange={handleUsernameChange} />
                   <Form.Input fluid label="email" placeholder="email" onChange={handleEmailChange} />
-                  </Form.Group>
+                </Form.Group>
 
-                {/* </Form.Group> */}
                 <Button type="submit">Submit</Button>
               </Form>
             </Grid.Row>
@@ -179,9 +175,13 @@ function Profile({ _id }) {
 
   return (
     <div>
-      <Segment style={{ padding: "5em " }} vertical textAlign="center">
-        <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-      </Segment>
+      {user ? (
+        <>
+          <Segment style={{ padding: "5em " }} vertical textAlign="center">
+            <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+          </Segment>
+        </>
+      ) : null}
     </div>
   );
 }
