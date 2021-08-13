@@ -38,7 +38,7 @@ function Login(props) {
         ...formState,
         [name]: value,
       });
-      console.log(formState.password)
+      
     };
   
     return (

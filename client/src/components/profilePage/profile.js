@@ -39,12 +39,12 @@ function Profile({ _id }) {
     variables: { _id: userId },
   });
 
-  console.log(userId);
+  
 
   let user;
   if (data) {
     user = data.user;
-    console.log(user.username);
+    
   }
 
   const [username, setUsername] = useState(null);
@@ -86,10 +86,10 @@ function Profile({ _id }) {
     email, username, firstName, lastName, street, townCity, postCode
   }
 
-  /* console.log(userInfo) */
+
 
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-  /* console.log(error); */
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {

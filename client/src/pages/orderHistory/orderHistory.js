@@ -9,10 +9,8 @@ import Auth from '../../utils/auth'
 
 function OrderHistory() {
     const userId = Auth.getUserID();
-    console.log("User:", userId);
     const { data } = useQuery(QUERY_USER, { variables: { _id: userId } });
     let user;
-    console.log("Data:", data);
 
     if (data) {
 
