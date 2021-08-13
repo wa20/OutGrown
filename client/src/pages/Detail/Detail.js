@@ -111,7 +111,8 @@ function Detail() {
                                     </Button>
                                     
                                 </p>
-                                <Link to="/marketplace">← Back to Marketplace</Link>
+                                <Link to="/marketplace">← Back to Marketplace</Link> <br/>
+                                <Link to="/home">← Back to Homepage</Link>
                             
                         </Grid.Column>
                     </Grid> 
