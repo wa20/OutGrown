@@ -57,6 +57,174 @@ db.once('open', async () => {
     },
 
     {
+
+      name: 'Panda Comforter',
+      description:
+        'Toy panda blanket comforter',
+      image: 'toys-panda-comforter.jpg',
+      category: categories[0]._id,
+      price: 10.99,
+    },
+    {
+
+      name: 'Bath Toy Cups',
+      description:
+        'Set of bath toys',
+      image: 'bath-toy.jpg',
+      category: categories[0]._id,
+      price: 5.99,
+    },
+    {
+
+      name: 'Wildly Adventures Educational Toy - Jangly Lion',
+      description:
+        "Bring out baby's wild side with these sensory toy",
+      image: 'toys-lion.jpg',
+      category: categories[0]._id,
+      price: 16,
+    },
+
+    {
+
+      name: 'Skip Hop - Fox Xylophone',
+      description:
+        "Inspires early musical creativity with eight colorful keys",
+      image: 'toys-fox-xylophone.jpg',
+      category: categories[0]._id,
+      price: 20,
+    },
+
+    {
+
+      name: 'Skip Hop Fox Bandana Buddy',
+      description:
+        "Baby will love this soft toy and teether toy filled with textures, patterns and sounds.",
+      image: 'toys-fox.jpg',
+      category: categories[0]._id,
+      price: 18,
+    },
+
+    {
+
+      name: 'Skip Hop Elephant Bandana Buddy',
+      description:
+        "Baby will love this soft toy and teether toy filled with textures, patterns and sounds.",
+      image: 'toys-elephant.jpg',
+      category: categories[0]._id,
+      price: 18,
+    },
+
+    {
+
+      name: 'Skip Hop Zoo Light Up Toy - Dino',
+      description:
+        "Brighten-up bath time with a cute ZOO® friend! Featuring water-activated multicolour lights, this soft and squeezable bath toy is sure to make a splash with your little one!",
+      image: 'toys-dino.jpg',
+      category: categories[0]._id,
+      price: 9,
+    },
+
+    {
+
+      name: 'Hey Sunshine Educational Toy - Linkie Octopus',
+      description:
+        " interactive Octopus Linkie soft toy is perfect for keeping little ones entertained while out and about.",
+      image: 'toys-octopus.jpg',
+      category: categories[0]._id,
+      price: 8,
+    },
+
+    {
+
+      name: 'Joie Dreamer Baby Rocker - Starry Night',
+      description:
+        "A cosy cradler comforts baby from newborn on. Compact frame and handy extras make for a soothing solution at home or on-the-go.",
+      image: 'dreamer-rocker.jpg',
+      category: categories[3]._id,
+      price: 75 ,
+    },
+
+    {
+      name: 'Welcome to the World 6 Piece Set - Sand',
+      description:
+        "Welcome to the World newborn clothing collection is full of adorable outfits that are perfect for making first impressions.",
+      image: 'outfits-6-piece.jpg',
+      category: categories[1]._id,
+      price: 25,
+    },
+
+    {
+      name: 'Mock Romper With Bird Print Shirt & Braces',
+      description:
+        "Get your little one dressed to impress with our stunning collection of occasion wear",
+      image: 'romper.jpg',
+      category: categories[1]._id,
+      price:14.50 ,
+    },
+
+
+    {
+      name: 'Giraffe Print Baby Sleepsuit Multipack - Set Of 3',
+      description:
+        "Made from beautifully soft jersey cotton thatll be kind to babys skin, our Basics collection is perfect for stocking up on wardrobe staples.",
+      image: 'giraffe-sleepsuits.jpg',
+      category: categories[1]._id,
+      price: 13.20,
+    },
+
+
+    {
+      name: 'Welcome to the World Soft Toy - Geoffrey Giraffe',
+      description:
+        "Welcome to the World toy and gift collection is full of reassuringly soft and friendly characters your child is sure to love. Our bestselling range embraces super soft faux fur for a luxury feel that's perfect for cuddles.",
+      image: 'toys-giraffe.jpg',
+      category: categories[0]._id,
+      price: 16 ,
+    },
+
+    {
+      name: 'Airo Pushchair - Mint',
+      description:
+        "Super slim and lightwieght travel stroller",
+      image: 'pushchair-mint.jpg',
+      category: categories[2]._id,
+      price: 399,
+    },
+    {
+      name: 'Airo Pushchair - Black',
+      description:
+        "Super slim and lightwieght travel stroller",
+      image: 'pushchair-black.jpg',
+      category: categories[2]._id,
+      price: 399,
+    },
+    {
+      name: 'Baby Snug and Activity Tray - Dusky Rose',
+      description:
+        "Baby Snug is a supportive seat that helps little ones get accustomed to sitting up on their own.",
+      image: 'floor-seating.jpg',
+      category: categories[3]._id,
+      price: 55,
+    },
+    {
+      name: 'Snax Highchair - Alphabet Floral',
+      description:
+        "Keep mealtimes comfortable with the Mamas & Papas Snax highchair.",
+      image: 'highchair.jpg',
+      category: categories[1]._id,
+      price: 85,
+    },
+    // {
+    //   name: '',
+    //   description:
+    //     "",
+    //   image: '',
+    //   category: categories[1]._id,
+    //   price: ,
+    // },
+
+
+    {
       name: 'Knitted shoes',
       description:
         'A pair of pink knitted shoes',
