@@ -57,7 +57,7 @@ const HomepageHeading = ({ mobile }) => (
         marginBottom: '1.0em',
       }}
     />
-    <Button inverted color="red" size='huge'>
+    <Button inverted color="red" size='huge' href="/marketplace">
 
       <Icon name='shopping bag' /> Shop Now
     </Button>
