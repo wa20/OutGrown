@@ -114,7 +114,7 @@ function Profile({ _id }) {
           <Card fluid>
             <Card.Content header="">
               Hey 
-              {/* {user.username ? user.username : 'first name'}  */}
+              {user.username ? user.username : 'There'} 
              
             </Card.Content>
 
@@ -122,22 +122,22 @@ function Profile({ _id }) {
               <Card.Meta>Delivery Address</Card.Meta>
               {/* <Card.Description>address line 1</Card.Description> */}
               <Card.Description>
-                {/* {user.street} */}
+                {user.street ? user.street : "Street Address"}
                 </Card.Description>
               <Card.Description>
-                {/* {user.townCity} */}
+                {user.townCity ? user.townCity : "Town or City"}
                 </Card.Description>
               <Card.Description>
-                {/* {user.postCode} */}
+                {user.postCode ? user.postCode : "Post Code"}
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
               <Icon name="user" /> 
-              {/* {user.username} */}
+              {user.username ? user.email : "Username"}
             </Card.Content>
             <Card.Content extra>
               <Icon name="mail" /> 
-              {/* {user.email ? user.email : 'email'} */}
+              {user.email ? user.email : 'Email'}
             </Card.Content>
           </Card>
         </Tab.Pane>
@@ -158,12 +158,12 @@ function Profile({ _id }) {
 
                   <Form.Group widths={2}>
                   <Form.Input fluid label="postcode" placeholder="postcode" onChange={handlePostCodeChange} />
-                  <Form.Input fluid label="Street" placeholder="Street" onChange={handleStreetChange} />
-                  <Form.Input fluid label="town city" placeholder="town city" onChange={handleTownCityChange} />
+                  <Form.Input fluid label="Street" placeholder="Street Address" onChange={handleStreetChange} />
+                  <Form.Input fluid label="town city" placeholder="Town or City" onChange={handleTownCityChange} />
                   </Form.Group>
 
                   <Form.Group widths={2}>
-                  <Form.Input fluid label="User Name" placeholder="First name" onChange={handleUsernameChange} />
+                  <Form.Input fluid label="User Name" placeholder="Username" onChange={handleUsernameChange} />
                   <Form.Input fluid label="email" placeholder="email" onChange={handleEmailChange} />
                   </Form.Group>
 
