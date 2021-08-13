@@ -1,29 +1,20 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 
-import PropTypes from 'prop-types'
+
 import {
-  Button,
-  Container,
-  Divider,
   Grid,
   Header,
-  Icon,
-  Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
-  Visibility,
 } from 'semantic-ui-react'
 import "./home-content.css"
 
 
 
 const HomeContent = () => (
-    <div>
+  <div>
 
-<Segment style={{ paddingTop: '1em', paddingBottom: '0em' }} vertical>
+    <Segment style={{ paddingTop: '1em', paddingBottom: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
@@ -33,7 +24,7 @@ const HomeContent = () => (
             <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }} className="DP">
-            
+
             <Header as='h3' style={{ fontSize: '2em' }}>
               "I shouldn't have gone with their competitor."
             </Header>
@@ -48,7 +39,7 @@ const HomeContent = () => (
     </Segment>
 
 
-    </div>
+  </div>
 )
 
 export default HomeContent

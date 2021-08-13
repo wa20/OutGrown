@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
-import Logo from '../../assets/outgrownLogo.png'
 import HomeContent from "../../components/home-content/home-content"
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
-import Cart from '../../components/cart/cart'
 import "../../index.css"
-
 
 import {
   Button,

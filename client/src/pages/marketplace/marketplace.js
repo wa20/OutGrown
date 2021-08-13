@@ -3,9 +3,7 @@ import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
-import CategoryMenu from "../../components/CategoryMenu/category-menu";
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
-import Filterbar from "../../components/filter/filter-bar"
 import {
   Container,
   Header,
@@ -170,8 +168,6 @@ const { MediaContextProvider, Media } = createMedia({
       <div>
         <ResponsiveContainer>
         <Nav/>
-        {/* <Filterbar/> */}
-        {/* <CategoryMenu /> */}
           <MarketProducts/>
         <Footer />
         </ResponsiveContainer>

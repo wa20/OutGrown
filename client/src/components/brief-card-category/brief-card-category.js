@@ -1,7 +1,7 @@
 import React from "react";
 import { useStoreContext } from "../../utils/globalState";
-import { Card, Divider, Icon, Image, Segment } from 'semantic-ui-react'
-import { makeStyles } from '@material-ui/core/styles';
+import { Card, Divider, Image, Segment } from 'semantic-ui-react'
+
 
 
 function CategoryItem(item) {

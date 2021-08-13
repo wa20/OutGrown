@@ -1,7 +1,6 @@
 import React from "react";
 import { useStoreContext } from "../../utils/globalState";
-import { Card, Icon, Image, Segment, Divider } from 'semantic-ui-react'
-import { makeStyles } from '@material-ui/core/styles';
+import { Card, Image, Segment, Divider } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 
@@ -20,19 +19,19 @@ function ProductItem(item) {
     <Card fluid centered style={{ height: '82ex' }}>
       <Card.Content centered >
         <Segment>
-        <Link to={`/products/${_id}`}>
-          <Image style={{ height: '50ex' }} centered src={`/images/${image}`} ui={false} />
-        </Link>
+          <Link to={`/products/${_id}`}>
+            <Image style={{ height: '50ex' }} centered src={`/images/${image}`} ui={false} />
+          </Link>
         </Segment>
         <Card.Header>{name}</Card.Header>
-        <Divider/>
+        <Divider />
         <Card.Description>
           {description}
-        </Card.Description>        
+        </Card.Description>
         <Card.Meta>
           <span>${price}</span>
         </Card.Meta>
-      </Card.Content>   
+      </Card.Content>
     </Card>
   );
 }
