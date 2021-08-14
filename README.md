@@ -1,5 +1,5 @@
 # Outgrown 
-![Outgrown Logo](client/public/images/outgrown-pic.png)
+![Outgrown Logo](client/public/images/logo-readme.png)
 
 ## Table of contents
 - [Intro](#intro)
