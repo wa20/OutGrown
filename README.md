@@ -45,7 +45,7 @@ To install and use this app, first clone this repository and run `npm install` t
 You can find our deployed app [here](https://outgrown-app.herokuapp.com/)
 
 ## Presentation
-- View [Presentation]|(https://docs.google.com/presentation/d/1KydcDfhfvQILAWaXHUA-3j7GjB6UKmMt/edit?usp=sharing&ouid=105126876603474420351&rtpof=true&sd=true)
+- View [Presentation](https://docs.google.com/presentation/d/1KydcDfhfvQILAWaXHUA-3j7GjB6UKmMt/edit?usp=sharing&ouid=105126876603474420351&rtpof=true&sd=true)
 
 ## License
 
