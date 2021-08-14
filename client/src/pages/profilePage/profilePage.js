@@ -13,6 +13,7 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import ViewOrderHistory from '../../components/profilePage/viewOrderHistory'
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -147,6 +148,7 @@ const ProfilePage = () => {
         <Profile />
         <PurchaseHistory />
         <Listings />
+        <ViewOrderHistory />
 
         <Footer />
       </ResponsiveContainer>
