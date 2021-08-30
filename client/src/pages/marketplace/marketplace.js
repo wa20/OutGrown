@@ -3,7 +3,9 @@ import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Footer from "../../components/footer/footer"
 import Nav from "../../components/navbar/navbar"
+// import CategoryMenu from "../../components/CategoryMenu/category-menu";
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
+// import Filterbar from "../../components/filter/filter-bar"
 import {
   Container,
   Header,
@@ -26,26 +28,26 @@ const { MediaContextProvider, Media } = createMedia({
     },
   })
    
-  const HomepageHeading = ({ mobile }) => (
-    <Container text>
-      <Header
-        as='h1'
-        content='Marketplace'
-        inverted
-        style={{
-          fontSize: mobile ? '2em' : '4em',
-          fontWeight: 'normal',
-          marginBottom: 0,
-          marginTop: mobile ? '1.5em' : '3em',
-          paddingTop: 30
-        }}
-      />
-    </Container>
-  )
+  // const HomepageHeading = ({ mobile }) => (
+  //   <Container text>
+  //     <Header
+  //       as='h1'
+  //       content='Marketplace'
+  //       inverted
+  //       style={{
+  //         fontSize: mobile ? '2em' : '4em',
+  //         fontWeight: 'normal',
+  //         marginBottom: 0,
+  //         marginTop: mobile ? '1.5em' : '3em',
+  //         paddingTop: 30
+  //       }}
+  //     />
+  //   </Container>
+  // )
   
-  HomepageHeading.propTypes = {
-    mobile: PropTypes.bool,
-  }
+  // HomepageHeading.propTypes = {
+  //   mobile: PropTypes.bool,
+  // }
   
   class DesktopContainer extends Component {
     state = {}
@@ -64,14 +66,14 @@ const { MediaContextProvider, Media } = createMedia({
             onBottomPassed={this.showFixedMenu}
             onBottomPassedReverse={this.hideFixedMenu}
           >
-            <Segment
+            {/* <Segment
               inverted
               textAlign='center'
               style={{ minHeight: 250, padding: '1em 0em' }}
               vertical
-            >
-              <HomepageHeading />
-            </Segment>
+            > */}
+              {/* <HomepageHeading /> */}
+            {/* </Segment> */}
           </Visibility>
   
           {children}
@@ -107,14 +109,14 @@ const { MediaContextProvider, Media } = createMedia({
       return (
         <Media as={Sidebar.Pushable} at="mobile">
   
-              <Segment
+              {/* <Segment
                 inverted
                 textAlign="center"
                 style={{ minHeight: 180, padding: "1em 0em" }}
                 vertical
-              >
-                <HomepageHeading mobile />
-              </Segment>
+              > */}
+                {/* <HomepageHeading mobile /> */}
+              {/* </Segment> */}
   
               {children}
   
@@ -168,7 +170,14 @@ const { MediaContextProvider, Media } = createMedia({
       <div>
         <ResponsiveContainer>
         <Nav/>
+        <Container textAlign="center" style={{ padding: "4em 0em",  width: "100vw"}} >
+      <h2>Marketplace</h2>
+        </Container>
+        {/* <Filterbar/> */}
+        {/* <CategoryMenu /> */}
+        <Container  style={{ padding: "2em 0em",  width: "85vw"}} >
           <MarketProducts/>
+         </Container> 
         <Footer />
         </ResponsiveContainer>
       </div>

@@ -1,0 +1,11 @@
+.grid{
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
+    /* max-height: 450px;
+    overflow: overlay; */
+
+   
+}
