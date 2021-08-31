@@ -211,6 +211,22 @@ input:focus {
 
 .DPP {
  
+  background-image: url("../src/assets/babyGoods.png");
+  background-position: center;
+  background-size: contain;
 
-  background: rgb(255, 230, 238);
+ 
 }
+
+
+.headerBanner{
+    background-image: url("../src/assets/outgrownBanner.png");
+    background-position: center;
+    background-size: 100%;   
+  }
+
+  .buttonPosition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
