@@ -7,6 +7,7 @@ import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
 import "../../index.css"
 
+
 import {
   Button,
   Container,
@@ -21,6 +22,7 @@ import CarouselFavorites from '../../components/carousel-favorites/carousel-favo
 import CarouselCategories from '../../components/carousel-categories/carousel-categories'
 // import CarouselProd from '../../components/our-favourites/our-favourites'
 
+
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
     mobile: 0,
@@ -30,34 +32,37 @@ const { MediaContextProvider, Media } = createMedia({
 })
 
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container text className="buttonPosition">
     <Header
       as='h1'
-      content='Outgrown'
+      content=''
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
-        paddingTop: 30
+        paddingTop: 30,
+        // color: "black"
       }}
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content=''
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        marginBottom: '1.0em',
+        marginBottom: '12.0em',
+        // color: "black"
       }}
     />
-    <Button inverted color="red" size='huge' href="/marketplace">
+    <Button inverted color="red" size='huge' href="/marketplace" >
 
       <Icon name='shopping bag' /> Shop Now
     </Button>
+
   </Container>
 )
 
@@ -81,9 +86,10 @@ class DesktopContainer extends Component {
           once={false}
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
+          className="headerBanner"
         >
           <Segment
-            inverted
+            // inverted
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
@@ -123,12 +129,14 @@ class MobileContainer extends Component {
     const { activeIndex } = this.state
 
     return (
-      <Media as={Sidebar.Pushable} at="mobile">
-
+      <Media as={Sidebar.Pushable} at="mobile" >
+         
         <Segment
           inverted
+          
           textAlign="center"
-          style={{ minHeight: 350, padding: "1em 0em" }}
+          style={{ minHeight: 350, padding: "1em 0em", background:""}}
+          
           vertical
         >
           <HomepageHeading mobile />
