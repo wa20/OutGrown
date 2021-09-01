@@ -8,7 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/globalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
-import { Card, Button, Header, Divider } from 'semantic-ui-react';
+import { Card, Button, Header, Divider, Icon } from 'semantic-ui-react';
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -72,7 +72,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+          <Icon name="shopping bag" />
         </span>
       </div>
     );
@@ -82,7 +82,7 @@ const Cart = () => {
     <Card>
       <div className="cart">
         <div className="close" onClick={toggleCart}>
-          [x]
+          <Icon name="window close"/>
         </div>
         <Header as='h1'>Shopping Cart</Header>
         <Divider />
@@ -92,22 +92,22 @@ const Cart = () => {
               <CartItem key={item._id} item={item} />
             ))}
 
-            <div className="flex-row space-between" >
-              <strong>Total: ${calculateTotal()}</strong>
+            <div className="flex-row space-between"  style={{ padding: "2em 0em" }}>
+              <strong>Total: £{calculateTotal()}</strong>
 
               {/* Check to see if the user is logged in. If so render a button to check out */}
               {Auth.loggedIn() ? (
                 <Button positive onClick={submitCheckout}>Checkout</Button>
                 
               ) : (
-                <span>(log in to check out)</span>
+                <span style={{color:"red"}}>(log in to check out)</span>
               )}
             </div>
           </div>
         ) : (
-          <h3>
+          <h6>
             You haven't added anything to your cart yet!
-          </h3>
+          </h6>
         )}
       </div>
     </Card>
