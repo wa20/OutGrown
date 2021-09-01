@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 import Profile from "../../components/profilePage/profile"
 import Listings from "../../components/profilePage/listings"
 import PurchaseHistory from "../../components/profilePage/purchaseHistory"
@@ -143,7 +143,7 @@ const ProfilePage = () => {
   return (
     <div>
       <ResponsiveContainer>
-        <Nav />
+        {/* <Nav /> */}
 
         <Profile />
         <PurchaseHistory />

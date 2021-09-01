@@ -3,7 +3,7 @@ import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import HomeContent from "../../components/home-content/home-content"
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 import Blurb from "../../components/blurb/blurb"
 import "../../index.css"
 
@@ -170,9 +170,12 @@ ResponsiveContainer.propTypes = {
 const Home = () => {
   return (
     <div>
-      <ResponsiveContainer>
-        <Nav />
+      <ResponsiveContainer >
+        {/* <Nav /> */}
+        <div>
         <Blurb />
+        
+        {/* <Container style={{width:"100vw"}}> */}
         <Grid stackable columns={2} style={{ padding: '3em 0em' }} vertical className="DPP">
           <Grid.Column centered width={8}>
             <CarouselFavorites />
@@ -180,9 +183,12 @@ const Home = () => {
           <Grid.Column centered width={8}>
             <CarouselCategories />
           </Grid.Column>
-        </Grid>
+        </Grid>  
+        {/* </Container> */}
+        
         <HomeContent />
         <Footer />
+        </div>
       </ResponsiveContainer>
     </div>
   );

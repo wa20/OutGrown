@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../../utils/queries';
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,7 +31,7 @@ function OrderHistory() {
     return (
         <>
 
-            <Nav />
+            {/* <Nav /> */}
 
             <div className="container my-1">
 
