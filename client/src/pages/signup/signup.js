@@ -12,7 +12,7 @@ import {
 } from 'semantic-ui-react'
 import Logo from '../../assets/outgrownLogo.png'
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -41,7 +41,7 @@ function Signup(props) {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <Card raised centered style={{ maxWidth: '100rem', minWidth: '23rem', marginTop: '5rem', marginBottom: '10rem' }} >
         <Image src={Logo} size="medium" fluid centered style={{ marginTop: '10px' }} />
         <Grid style={{ height: '410px', paddingLeft: '10px' }} verticalAlign='left'>

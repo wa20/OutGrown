@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 import ListingForm from "../../components/listing/listingForm"
 import {
   Container,
@@ -140,7 +140,7 @@ const ListingPage = () => {
   return (
     <div>
       <ResponsiveContainer>
-        <Nav />
+        {/* <Nav /> */}
 
         <ListingForm />
 

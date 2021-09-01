@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 // import CategoryMenu from "../../components/CategoryMenu/category-menu";
 import MarketProducts from "../../components/marketplace-page/marketplace-page"
 // import Filterbar from "../../components/filter/filter-bar"
@@ -169,7 +169,7 @@ const { MediaContextProvider, Media } = createMedia({
     return (
       <div>
         <ResponsiveContainer>
-        <Nav/>
+        {/* <Nav/> */}
         <Container textAlign="center" style={{ padding: "4em 0em",  width: "100vw"}} >
       <h2>Marketplace</h2>
         </Container>

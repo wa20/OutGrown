@@ -18,7 +18,7 @@ import ListingPage from './pages/listingPage/listingPage';
 import Detail from './pages/Detail/Detail';
 import Success from './pages/success/Success'
 import OrderHistory from './pages/orderHistory/orderHistory'
-
+import Nav from "../src/components/navbar/navbar"
 import { StoreProvider } from './utils/globalState';
 
 const httpLink = createHttpLink({
@@ -45,6 +45,7 @@ function App() {
     <ApolloProvider client={client}>
       <StoreProvider>
         <Router>
+        <Nav />
           <div>
 
             <Switch>

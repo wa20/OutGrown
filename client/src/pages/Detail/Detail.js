@@ -12,7 +12,7 @@ import {
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import Footer from "../../components/footer/footer"
-import Nav from "../../components/navbar/navbar"
+// import Nav from "../../components/navbar/navbar"
 import Typography from '@material-ui/core/Typography';
 
 
@@ -85,7 +85,7 @@ function Detail() {
 
     return (
         <>
-            <Nav />
+            {/* <Nav /> */}
             <div>
                 {currentProduct && cart ? (
                     <Segment>
