@@ -3,17 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import {
   Button,
-  Container,
   Divider,
   Grid,
   Header,
-  Icon,
   Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
-  Visibility,
 } from "semantic-ui-react";
 import { useStoreContext } from "../../utils/globalState";
 import {
@@ -132,7 +126,7 @@ function Detail() {
                     <strong>Price: </strong> £{currentProduct.price}{" "}
                   </Typography>
                 </Grid.Row>
-
+                <Divider horizontal>SELECT</Divider>
                 <Grid.Row style={{ padding: "4em 0.5em" }}>
                   <div>
                     <Button
@@ -160,10 +154,11 @@ function Detail() {
                   </div>
                 </Grid.Row>
 
-                <Divider horizontal>SELECT</Divider>
 
-                <Grid.Row style={{ padding: "4em 0.5em" }}>
-                  <Button.Group>
+              </Grid.Column>
+            </Grid>
+            <Grid style={{ padding: "2em 0em" }} centered>
+                  <Button.Group centered>
                     <Button href="/marketplace">Back to Marketplace</Button>
                     <Button.Or />
                     <Button href="/" positive>
@@ -173,10 +168,9 @@ function Detail() {
 
                   {/* <Link to="/marketplace">← Back to Marketplace</Link> <br />
                   <Link to="/home">← Back to Homepage</Link> */}
-                </Grid.Row>
-              </Grid.Column>
-            </Grid>
+                </Grid>
           </Segment>
+         
         ) : null}
       </div>
       <Footer />

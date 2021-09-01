@@ -24,26 +24,26 @@ const { MediaContextProvider, Media } = createMedia({
 })
 
 
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as='h2'
-      content='Profile'
-      inverted
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
-        paddingTop: 30
-      }}
-    />
-  </Container>
-)
+// const HomepageHeading = ({ mobile }) => (
+//   <Container text>
+//     <Header
+//       as='h2'
+//       content='Profile'
+//       inverted
+//       style={{
+//         fontSize: mobile ? '2em' : '4em',
+//         fontWeight: 'normal',
+//         marginBottom: 0,
+//         marginTop: mobile ? '1.5em' : '3em',
+//         paddingTop: 30
+//       }}
+//     />
+//   </Container>
+// )
 
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
+// HomepageHeading.propTypes = {
+//   mobile: PropTypes.bool,
+// }
 
 class DesktopContainer extends Component {
   state = {}
@@ -62,14 +62,14 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
+          {/* <Segment
             inverted
             textAlign='center'
             style={{ minHeight: 150, padding: '0.5em 0em' }}
             vertical
-          >
+          > */}
             {/* <HomepageHeading /> */}
-          </Segment>
+          {/* </Segment> */}
         </Visibility>
 
         {children}
@@ -105,14 +105,14 @@ class MobileContainer extends Component {
     return (
       <Media as={Sidebar.Pushable} at="mobile">
 
-        <Segment
+        {/* <Segment
           inverted
           textAlign="center"
           style={{ minHeight: 180, padding: "1em 0em" }}
           vertical
         >
           <HomepageHeading mobile />
-        </Segment>
+        </Segment> */}
 
         {children}
 
@@ -145,6 +145,9 @@ const ProfilePage = () => {
       <ResponsiveContainer>
         {/* <Nav /> */}
 
+        <Container textAlign="center" style={{ padding: "2em 0em",  width: "100vw"}} >
+      <h2>Profile</h2>
+        </Container>
         <Profile />
         <PurchaseHistory />
         <Listings />
