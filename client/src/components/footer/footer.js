@@ -27,7 +27,7 @@ const Footer = () => (
             <Header inverted as='h4' content='About' />
             <List link inverted>
               <List.Item as='a'>Sitemap</List.Item>
-              <List.Item as='a'>Contact Us</List.Item>
+              <List.Item href="/contact" as='a'>Contact Us</List.Item>
               <List.Item as='a'>About Us</List.Item>
               {/* <List.Item as='a'>Gazebo Plans</List.Item> */}
             </List>
