@@ -51,7 +51,8 @@ const CartItem = ({ item }) => {
           {/* <Link to={`/products/${_id}`}> */}
             <Image
               floated="left"
-              size="mini"
+              // size="small"
+              rounded
               src={`/images/${item.image}`}
               alt={item.name}
             />
