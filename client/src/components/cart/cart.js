@@ -92,15 +92,16 @@ const Cart = () => {
               <CartItem key={item._id} item={item} />
             ))}
 
-            <div className="flex-row space-between"  style={{ padding: "2em 0em" }}>
-              <strong>Total: £{calculateTotal()}</strong>
+            <div className="flex-row space-between"  style={{ padding: "2.5em 0em", fontSize:"1.5em" }}>
+            Total:<strong>£{calculateTotal()}</strong>
 
               {/* Check to see if the user is logged in. If so render a button to check out */}
               {Auth.loggedIn() ? (
                 <Button positive onClick={submitCheckout}>Checkout</Button>
                 
               ) : (
-                <span style={{color:"red"}}>(log in to check out)</span>
+                <Button color="red" href="/login" fluid style={{margin:"5px"}}>Log in to Checkout</Button>
+                // <span style={{color:"red"}}>(log in to check out)</span>
               )}
             </div>
           </div>
