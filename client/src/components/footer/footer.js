@@ -26,13 +26,13 @@ const Footer = () => (
           <Grid.Column width={3}>
             <Header inverted as='h4' content='About' />
             <List link inverted>
-              <List.Item as='a'>Sitemap</List.Item>
+              {/* <List.Item as='a'>Sitemap</List.Item> */}
               <List.Item href="/contact" as='a'>Contact Us</List.Item>
               <List.Item as='a'>About Us</List.Item>
               {/* <List.Item as='a'>Gazebo Plans</List.Item> */}
             </List>
           </Grid.Column>
-          <Grid.Column width={3}>
+          {/* <Grid.Column width={3}>
             <Header inverted as='h4' content='T&Cs' />
             <List link inverted>
               <List.Item as='a'>Terms of Service</List.Item>
@@ -40,13 +40,13 @@ const Footer = () => (
               <List.Item as='a'>Refund Policy</List.Item>
               <List.Item as='a'>FAQ</List.Item>
             </List>
-          </Grid.Column>
+          </Grid.Column> */}
           <Grid.Column width={7}>
             <Header as='h4' inverted>
-              Footer Header
+              Hey!
             </Header>
             <p>
-              Extra space for a call to action inside the footer that could help re-engage users.
+              We are OutGrown, welcome to our site!
             </p>
           </Grid.Column>
         </Grid.Row>
