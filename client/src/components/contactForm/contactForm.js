@@ -68,13 +68,13 @@ const {
  
 return (
    
-<div style={{ padding: "8em 0em"}} className="align" >
+<div style={{ padding: "8em 0em"}} className="align2" >
 
       {/* <Typography variant="h6" gutterBottom className="align" style={{marginBottom:"2rem"}}>
         Write A Message
       </Typography> */}
 
-      <form className="align" onSubmit={handleSubmit(onSubmit)} noValidate >
+      <form className="align2" onSubmit={handleSubmit(onSubmit)} noValidate >
     <Grid container spacing={3} style={{width:'50vw'}} >
 
         <Grid item xs={12} sm={6}>
@@ -120,7 +120,7 @@ return (
            {errors.message && <span className='errorMessage' style={{color:"red"}}>Enter a message</span>}
     </Grid>
 
-    <Grid item xs={12} className="align" style={{ padding: "5em 0em"}}>
+    <Grid item xs={12} className="align2" style={{ padding: "5em 0em"}}>
         <Button type="submit"  icon labelPosition='right'>Send Message <Icon name='send' /></Button>
         </Grid>
     </Grid>
