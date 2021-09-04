@@ -1,10 +1,10 @@
-.align{
+.align2{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form{
+.form2{
     display: flex;
     justify-content: space-around;
     align-items: center;
