@@ -30,9 +30,11 @@ To install and use this app, first clone this repository and run `npm install` t
 
 ## Screenshots
 
-![Homepage](client/public/images/homepage.png)
-![Marketplace](client/public/images/marketplace.png)
-![Login](client/public/images/login.png)
+![Homepage](client/public/images/screenshots/outgrown-homePage.png)
+![Marketplace](client/public/images/screenshots/outgrown-market.png)
+![Product Page](client/public/images/screenshots/outgrown-product.png)
+![Sign Up](client/public/images/screenshots/outgrown-signUp.png)
+![Login](client/public/images/screenshots/outgrown-login.png)
 
 ## Contributing 
 
